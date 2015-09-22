@@ -1,17 +1,19 @@
-one:
+1:
+  id: 1
   name: Item A
   description: Description A
   category_id: 1
   image_url: asdf
 
-
-two:
+2:
+  id: 2
   name: Item B
   description: Description B
   category_id: 2
   image_url: asdf
 
-three:
+3:
+  id: 3
   name: Item C
   description: Description C
   category_id: 2

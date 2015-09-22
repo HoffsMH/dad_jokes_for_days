@@ -1,8 +1,14 @@
-one:
+1:
+  id: 1
   name: Category A
+  dao: categorya
 
-two:
+2:
+  id: 2
   name: Category B
+  dao: categoryb
 
-three:
+3:
+  id: 3
   name: Category C
+  dao: categoryc

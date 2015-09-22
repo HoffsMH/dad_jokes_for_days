@@ -20,9 +20,9 @@
           <ul class="dropdown-menu">
             <li><%= link_to "All Categories", categories_path, id: "all-categories" %></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Cool Dad Stuff</a></li>
-            <li><a href="#">Cooler Dad Stuff</a></li>
-            <li><a href="#">Coolest Dad Stuff</a></li>
+            <% @categories.each do |category| %>
+              <li><%= link_to category.name, category_path(category) %></li>
+            <% end %>
           </ul>
         </li>
 
