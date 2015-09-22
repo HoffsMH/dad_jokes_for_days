@@ -1,0 +1,99 @@
+.form-inline{
+  display: inline;
+}
+
+body {
+  background-image: url("bg_crazy_al.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+    text-shadow: 3px 3px #ffffff;
+}
+
+select {
+  font-size: 25px;
+}
+
+input[type="text"] {
+  width: 50%;
+}
+
+input[type="password"] {
+  width: 50%;
+}
+
+textarea {
+  width: 50%;
+  height: 100px;
+}
+
+.headshot img{
+  background-color: white;
+}
+
+.mosaic img{
+  height: 200px;
+}
+
+.tiny img{
+  height: 50px;
+}
+
+.main-cell{
+  width: 50%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.small-cell{
+  width: 1%;
+}
+
+.flash{
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.flash-notice{
+  background-color: green;
+}
+
+.flash-alert{
+  background-color: red;
+}
+
+/*
+===----------===----------===----------===----------===----------===
+  Bootstrap
+===----------===----------===----------===----------===----------===
+*/
+
+.well {
+  background-color: rgba(244, 244, 244, .8);
+  border-radius: 10px;
+  border: 3px solid #b3b3b3;
+  /*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);*/
+}
+
+.table-bordered {
+  border: 2px solid #b3b3b3;
+}
+
+tr:hover td {
+  background-color: #cccccc;
+}
+
+.btn {
+  margin: 1px;
+  border-radius: 50px;
+}
+
+th{
+  font-size: 25px;
+}
