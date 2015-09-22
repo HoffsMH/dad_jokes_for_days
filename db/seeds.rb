@@ -1,3 +1,3 @@
-Category.create(name: "Greeting Cards")
-Category.create(name: "Mugs")
-Category.create(name: "T-shirts")
+require_relative 'seeds/categories.rb'
+require_relative 'seeds/items.rb'
+
