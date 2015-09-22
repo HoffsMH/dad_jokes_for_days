@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "A guest" do
   fixtures :categories
-
+Category.create(name: "Category A")
   it "can visit the categories page" do
     visit "/"
     click_link "All Categories"
