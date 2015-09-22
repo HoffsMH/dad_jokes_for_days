@@ -3,12 +3,18 @@
 <head>
   <title>DadJokesForDays</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<%= render 'layouts/navbar' %>
 
+<div class="container well">
+ <div class="flash flash-alert"><%= flash.alert %></div>
+ <div class="flash flash-notice"><%= flash.notice %></div>
+ <%= yield %>
+</div>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

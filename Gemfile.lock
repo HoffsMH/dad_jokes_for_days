@@ -193,6 +193,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   bcrypt
   bootstrap-sass
   byebug
