@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :category_path
 
   def category_path(category)
-    category.dao.prepend('/')
+    category.dao.prepend("/")
   end
 
   def load_categories
