@@ -97,3 +97,11 @@ tr:hover td {
 th{
   font-size: 25px;
 }
+
+
+.add_to_cart_button {
+  display:inline;
+}
+.add_to_cart_button  form {
+  display:inline;
+}

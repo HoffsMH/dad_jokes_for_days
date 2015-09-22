@@ -1,5 +1,4 @@
-<%= @items.each do |item| %>
-  <%= item.name %>
-  <%= button_to "Add To Cart", "/" %>
+<% @items.each do |item| %>
+  <li> <%= item.name %><span class='add_to_cart_button'> <%= button_to "Add To Cart", item_path(item), class:'btn btn-primary' %></span></li>
 <% end %>
 
