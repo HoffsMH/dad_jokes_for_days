@@ -1,6 +1,7 @@
 1:
   id: 1
   name: Item A
+  dao: Itema
   description: Description A
   category_id: 1
   image_url: asdf
@@ -8,6 +9,7 @@
 2:
   id: 2
   name: Item B
+  dao: Itemb
   description: Description B
   category_id: 2
   image_url: asdf
@@ -15,6 +17,7 @@
 3:
   id: 3
   name: Item C
+  dao: Itemc
   description: Description C
   category_id: 2
   image_url: asdf
