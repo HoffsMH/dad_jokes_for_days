@@ -1,8 +1,11 @@
-one:
+1:
+  id: 1
   name: Category A
 
-two:
+2:
+  id: 2
   name: Category B
 
-three:
+3:
+  id: 3
   name: Category C

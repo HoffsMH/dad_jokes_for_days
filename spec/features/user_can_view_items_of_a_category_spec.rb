@@ -4,9 +4,12 @@ feature "category items" do
   fixtures :categories
   fixtures :items
 
+  let(:category) {
+    Category.find_by_name("Category B")
+    }
+
   before(:each) do
     visit "/"
-    category = Category.find_by_name("Category B")
     click_link category.name
   end
 
