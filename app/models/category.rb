@@ -8,8 +8,7 @@ class Category < ActiveRecord::Base
     end
   end
 
-
   def to_param
-    self.dao
+    dao
   end
 end
