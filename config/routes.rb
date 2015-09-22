@@ -2,8 +2,12 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  resources :categories, only: [:index, :show]
+  resources :categories, only: [:index]
   resources :items
+  resource :cart, only: [:show, :delete, :edit, :update]
+  get '/:category' => 'categories#show'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

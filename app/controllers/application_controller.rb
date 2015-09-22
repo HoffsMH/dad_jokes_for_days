@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :load_categories
 
+  helper_method :category_path
+
+  def category_path(category)
+    category.dao.prepend('/')
+  end
+
   def load_categories
     @categories = Category.all
   end

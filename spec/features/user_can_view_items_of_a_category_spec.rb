@@ -14,7 +14,7 @@ feature "category items" do
   end
 
   it "can visit a category page" do
-    expect(current_path).to eq(category_path(category))
+    expect(current_path).to eq(category.dao.prepend('/'))
   end
 
   it "can see only the items for the category" do
