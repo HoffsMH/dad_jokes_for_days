@@ -22,7 +22,7 @@ feature "Items page" do
 
   it "can see all add to cart buttons" do
     visit "/"
-    click_link "All Products" 
+    click_link "All Products"
     expect(page).to have_button("Add To Cart")
   end
 end
