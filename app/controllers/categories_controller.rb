@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find_by_dao(params[:category])
+    @items = @category.items
   end
   # def new
   #   @category = Category.new
