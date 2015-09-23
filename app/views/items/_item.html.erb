@@ -1,4 +1,5 @@
 <div class="summary text-center">
-  <%= render partial: "partials/link_summary", locals: {summary: item} %>  
+  <%= render partial: "partials/link_summary", locals: {summary: item} %><br>
+  <span class='price'>$<%= number_with_delimiter(item.price, :delimiter => ',') %></span> <br>
   <span class='add_to_cart_button'><%= button_to "Add To Cart", cart_path(item_id: item), class:'btn btn-primary' %></span>
 </div>

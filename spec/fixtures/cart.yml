@@ -4,8 +4,7 @@
   dao: Itema
   description: Description A
   category_id: 1
-  image_url: /images/itema.jpg
-  price: 11.11
+  image_url: asdf
 
 2:
   id: 2
@@ -13,8 +12,7 @@
   dao: Itemb
   description: Description B
   category_id: 2
-  image_url: /images/itemb.jpg
-  price: 222.22
+  image_url: asdf
 
 3:
   id: 3
@@ -22,5 +20,4 @@
   dao: Itemc
   description: Description C
   category_id: 2
-  image_url: /images/itemc.jpg
-  price: 3333.33
+  image_url: asdf

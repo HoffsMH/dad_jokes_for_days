@@ -116,3 +116,11 @@ th{
 .add_to_cart_button  form {
   display:inline;
 }
+
+.price {
+  text-align: right;
+}
+
+.grand-total-row {
+  background-color: rgba(0,0,0, 0.15);
+}

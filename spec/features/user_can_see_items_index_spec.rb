@@ -29,7 +29,7 @@ feature "Items page - a guest" do
     page.should have_xpath("//img[@src=\"/images/itemc.jpg\"]")
   end
 
-  xit "can see a price for each item" do
+  it "can see a price for each item" do
     visit "/"
     click_link "All Products"
 

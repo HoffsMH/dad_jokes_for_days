@@ -2,15 +2,15 @@ require 'rails_helper'
 
 describe Item do
   let(:valid_attributes) {
-    { name: "mug mug", description: "100% ceramic", image_url: "wowow", dao: "mugmug" }
+    { name: "mug mug", description: "100% ceramic", image_url: "wowow", dao: "mugmug", price: 10.23 }
   }
 
   let(:non_unique_attributes) {
-    { name: "mug mug", description: "100% Ceramicc", image_url: "wowowow", dao: "mugmug" }
+    { name: "zug zug", description: "100% Ceramicc", image_url: "wowowow", dao: "zugzug", price: 10.23 }
   }
 
   before(:each) {
-    Item.create(valid_attributes)
+    Item.create(non_unique_attributes)
   }
 
   let(:item) {
@@ -51,6 +51,13 @@ describe Item do
     expect(item).to be_invalid
   end
 
+
+  it "won't create an item without a price" do
+    item.price = nil
+
+    expect(item).to be_invalid
+  end
+
   xit "won't create an item without a dao" do
     item.dao = nil
     # cannot actually be tested since it runs the validation
@@ -65,7 +72,7 @@ describe Item do
   end
 
   it "does not let a non unique item name through" do
-    item = Item.new(valid_attributes)
+    item = Item.new(non_unique_attributes)
     expect(item).to be_invalid
   end
 
