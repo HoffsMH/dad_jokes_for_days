@@ -11,7 +11,7 @@ feature "Items page" do
     expect(current_path).to eq(items_path)
   end
 
-  it "can see all items on the items page" do
+  it "all items have titles" do
     visit "/"
     click_link "All Products"
 
@@ -20,9 +20,28 @@ feature "Items page" do
     expect(page).to have_content("Item C")
   end
 
-  it "can see all add to cart buttons" do
+  it "all items have images" do
     visit "/"
     click_link "All Products"
+
+    page.should have_xpath("//img[@src=\"http://domain.com/address1\"]")
+    page.should have_xpath("//img[@src=\"http://domain.com/address2\"]")
+    page.should have_xpath("//img[@src=\"http://domain.com/address3\"]")
+  end
+
+  xit "all items have prices" do
+    visit "/"
+    click_link "All Products"
+
+    expect(page).to have_content("$11.11")
+    expect(page).to have_content("$222.22")
+    expect(page).to have_content("$3,333.33")
+  end
+
+  it "has an Add To Cart button" do
+    visit "/"
+    click_link "All Products"
+
     expect(page).to have_button("Add To Cart")
   end
 end
