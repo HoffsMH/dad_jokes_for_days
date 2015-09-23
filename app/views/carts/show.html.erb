@@ -1,7 +1,13 @@
-<tr><th>Item</th><th>Quantity</th>/tr>
-<tr>
-  <% @cart_items.each do |cart_item| %>
-    <%= Cart_item.new(*cart_item).name %>
-    <%= Cart_item.new(*cart_item).quantity%>
-  <% end %>
-</tr>
+<table class='table'>
+  <tr><th>Item</th><th>Quantity</th><th>Price</th></tr><br>
+    <% @cart_items.each do |cart_item| %>
+      <tr>
+        <td><%= Cart_item.new(*cart_item).name %></td>
+        <td><%= Cart_item.new(*cart_item).quantity%></td>
+        <td>price here</td>
+      </tr>
+    <% end %>
+</table>
+<br>
+<hr>
+total:                               stuff

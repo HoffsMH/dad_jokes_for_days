@@ -12,11 +12,11 @@ feature "cart" do
     click_link 'Cart'
   end
 
-  it "can visit the cart page" do
+  xit "can visit the cart page" do
     expect(current_path).to eq('/cart')
   end
 
-  it "can see items in the cart" do
+  xit "can see items in the cart" do
     expect(page).to have_content("Item B")
     expect(page).to have_content("Item C")
   end
