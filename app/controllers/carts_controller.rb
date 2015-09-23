@@ -9,9 +9,9 @@ class CartsController < ApplicationController
     else
       session[:cart] = {params[:item_id] => 1}
     end
-
     @cart_items = session[:cart]
 
+    flash[:notice] = 'Added '  + Item.find_by_dao(params[:item_id]).name
     redirect_to '/cart'
   end
 

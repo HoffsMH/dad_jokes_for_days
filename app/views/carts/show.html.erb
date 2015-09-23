@@ -1,3 +1,5 @@
+<h1 class='text-left'>Your Cart</h1>
+<div class='col-md-7'>
 <table class='table'>
   <tr><th>Item</th><th>Quantity</th><th>Price</th></tr><br>
     <% @grand_total = 0 %>
@@ -6,14 +8,13 @@
       <tr>
         <td><%= item.name %></td>
         <td><%= item.quantity%></td>
-        <td><span class='price'>$<%= number_with_delimiter(item.price, :delimiter => ',') %></span></td>
+        <td class='price'><span class='price'>$<%= number_with_delimiter(item.price, :delimiter => ',') %></span></td>
         <% @grand_total += item.total %>
       </tr>
     <% end %>
-<hr>
-<tfoot>
-  <td> Total: </td> <td> </td> <td> <span class='price'>  $<%= number_with_delimiter(@grand_total, :delimiter => ',') %></span> </td>
+ <tfoot class='grand-total-row'>
+  <td> Total: </td> <td> </td> <td class='price'> <span class='price'>  $<%= number_with_delimiter(@grand_total, :delimiter => ',') %></span> </td>
 </tfoot>
 
 </table>
-
+</div>

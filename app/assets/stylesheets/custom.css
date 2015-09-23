@@ -118,6 +118,9 @@ th{
 }
 
 .price {
-  display: inline-block;
   text-align: right;
+}
+
+.grand-total-row {
+  background-color: rgba(0,0,0, 0.15);
 }
