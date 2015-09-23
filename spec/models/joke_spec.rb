@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 describe Joke do
   let(:valid_attributes) {
     { lead: "What do you call a cow with no legs?", punchline: "Ground beef.." }
@@ -36,5 +37,6 @@ describe Joke do
     category = Joke.new(valid_attributes)
     expect(category).to be_invalid
   end
+
 
 end
