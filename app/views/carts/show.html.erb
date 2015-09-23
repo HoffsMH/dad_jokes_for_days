@@ -6,11 +6,14 @@
       <tr>
         <td><%= item.name %></td>
         <td><%= item.quantity%></td>
-        <td><%= item.quantity_total%></td>
-        <% @grand_total += item.quantity_total %>
+        <td><span class='price'>$<%= number_with_delimiter(item.price, :delimiter => ',') %></span></td>
+        <% @grand_total += item.total %>
       </tr>
     <% end %>
-</table>
-<br>
 <hr>
-Total:                               <%= @grand_total %>
+<tfoot>
+  <td> Total: </td> <td> </td> <td> <span class='price'>  $<%= number_with_delimiter(@grand_total, :delimiter => ',') %></span> </td>
+</tfoot>
+
+</table>
+

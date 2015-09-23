@@ -116,3 +116,8 @@ th{
 .add_to_cart_button  form {
   display:inline;
 }
+
+.price {
+  display: inline-block;
+  text-align: right;
+}
