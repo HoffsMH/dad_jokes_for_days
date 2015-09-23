@@ -1,6 +1,7 @@
 class Category < ActiveRecord::Base
   has_many :items
   validates :name, :dao, presence: true
+  validates :name, uniqueness: true
 
   before_validation do
     if name
