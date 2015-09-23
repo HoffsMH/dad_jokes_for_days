@@ -1,3 +1,14 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.summary{
+  font-size: 25px;
+  background-color: white;
+  border-color: black;
+  border-style: solid;
+  border-radius: 15px;
+  display: inline-block;
+  padding: 4px;
+  margin: 4px;
+}

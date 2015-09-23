@@ -1,4 +1,6 @@
-<% @items.each do |item| %>
-  <li> <%= link_to item.name, item_path(item) %><span class='add_to_cart_button'> <%= button_to "Add To Cart", cart_path(item_id: item), class:'btn btn-primary' %></span></li>
-<% end %>
+<h1>All Products</h1>
+<hr>
 
+<div class="text-center">
+  <%= render @items %>
+</div>
