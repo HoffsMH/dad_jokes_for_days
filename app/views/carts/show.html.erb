@@ -1,1 +1,7 @@
-hi
+<tr><th>Item</th><th>Quantity</th>/tr>
+<tr>
+  <% @cart_items.each do |cart_item| %>
+    <%= Cart_item.new(*cart_item).name %>
+    <%= Cart_item.new(*cart_item).quantity%>
+  <% end %>
+</tr>
