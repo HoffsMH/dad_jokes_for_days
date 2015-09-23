@@ -38,6 +38,17 @@ textarea {
   height: 200px;
 }
 
+.summary{
+  background-color: white;
+  border-color: black;
+  border-radius: 15px;
+  border-style: solid;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px;
+  padding: 4px;
+}
+
 .tiny img{
   height: 50px;
 }
