@@ -4,7 +4,7 @@
   <tr><th>Item</th><th>Quantity</th><th>Price</th></tr><br>
     <% @grand_total = 0 %>
     <% @cart_items.each do |cart_item| %>
-      <% item = Cart_item.new(*cart_item) %>
+      <% item = CartItem.new(*cart_item) %>
       <tr>
         <td><%= item.name %></td>
         <td><%= item.quantity%></td>
