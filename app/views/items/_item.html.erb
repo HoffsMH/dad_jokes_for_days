@@ -1,1 +1,8 @@
+<<<<<<< HEAD
 <li> <%= link_to item.name, item_path(item) %><span class='add_to_cart_button'> <%= button_to "Add To Cart", cart_path(item_id: item), class:'btn btn-primary' %></span></li>
+=======
+<div class="summary text-center">
+  <%= render partial: "partials/link_summary", locals: {summary: item} %>  
+  <span class='add_to_cart_button'><%= button_to "Add To Cart", cart_path(item_id: item), class:'btn btn-primary' %></span>
+</div>
+>>>>>>> master
