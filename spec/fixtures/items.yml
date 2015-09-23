@@ -4,7 +4,7 @@
   dao: Itema
   description: Description A
   category_id: 1
-  image_url: http://domain.com/address1
+  image_url: /images/itema.jpg
 
 2:
   id: 2
@@ -12,7 +12,7 @@
   dao: Itemb
   description: Description B
   category_id: 2
-  image_url: http://domain.com/address2
+  image_url: /images/itemb.jpg
 
 3:
   id: 3
@@ -20,4 +20,4 @@
   dao: Itemc
   description: Description C
   category_id: 2
-  image_url: http://domain.com/address3
+  image_url: /images/itemc.jpg

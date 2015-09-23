@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "A guest" do
+feature "Categories page - a guest" do
   fixtures :categories
 
   it "can visit the categories page" do
@@ -10,12 +10,21 @@ feature "A guest" do
     expect(current_path).to eq(categories_path)
   end
 
-  it "can see all categories on the categories page" do
+  it "can see the name of each category" do
     visit "/"
     click_link "All Categories"
 
     expect(page).to have_content("Category A")
     expect(page).to have_content("Category B")
     expect(page).to have_content("Category C")
+  end
+
+  it "can see an image for each category" do
+    visit "/"
+    click_link "All Categories"
+
+    page.should have_xpath("//img[@src=\"/images/categorya.jpg\"]")
+    page.should have_xpath("//img[@src=\"/images/categoryb.jpg\"]")
+    page.should have_xpath("//img[@src=\"/images/categoryc.jpg\"]")
   end
 end

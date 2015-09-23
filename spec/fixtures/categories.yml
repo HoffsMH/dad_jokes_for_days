@@ -2,13 +2,16 @@
   id: 1
   name: Category A
   dao: categorya
+  image_url: /images/categorya.jpg
 
 2:
   id: 2
   name: Category B
   dao: categoryb
+  image_url: /images/categoryb.jpg
 
 3:
   id: 3
   name: Category C
   dao: categoryc
+  image_url: /images/categoryc.jpg
