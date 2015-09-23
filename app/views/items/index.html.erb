@@ -1,4 +1,4 @@
 <% @items.each do |item| %>
-  <li> <%= link_to item.name, item_path(item) %><span class='add_to_cart_button'> <%= button_to "Add To Cart", cart_path(item), class:'btn btn-primary' %></span></li>
+  <li> <%= link_to item.name, item_path(item) %><span class='add_to_cart_button'> <%= button_to "Add To Cart", cart_path, class:'btn btn-primary', html_options: {method: "POST"} %></span></li>
 <% end %>
 
