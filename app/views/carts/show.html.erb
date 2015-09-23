@@ -1,13 +1,16 @@
 <table class='table'>
   <tr><th>Item</th><th>Quantity</th><th>Price</th></tr><br>
+    <% @grand_total = 0 %>
     <% @cart_items.each do |cart_item| %>
+      <% item = Cart_item.new(*cart_item) %>
       <tr>
-        <td><%= Cart_item.new(*cart_item).name %></td>
-        <td><%= Cart_item.new(*cart_item).quantity%></td>
-        <td>price here</td>
+        <td><%= item.name %></td>
+        <td><%= item.quantity%></td>
+        <td><%= item.quantity_total%></td>
+        <% @grand_total += item.quantity_total %>
       </tr>
     <% end %>
 </table>
 <br>
 <hr>
-total:                               stuff
+total:                               <%= @grand_total %>

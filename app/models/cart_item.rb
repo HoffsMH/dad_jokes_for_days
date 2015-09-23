@@ -6,4 +6,9 @@ class Cart_item < SimpleDelegator
     super(@item)
   end
 
+  def quantity_total
+
+    price * @quantity
+  end
+
 end
