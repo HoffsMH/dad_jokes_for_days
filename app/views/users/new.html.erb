@@ -1,0 +1,15 @@
+  <%= flash[:notice] %>
+  <h1>Sign Up</h1>
+  <div class='well'>
+<%= form_for :new_user, url: {action: "create"}, html: {class: "signup"} do |f| %>
+        <%= f.text_field :email, placeholder: "email" %><br>
+
+        <%= f.text_field :user_name, placeholder: "User Name" %><br>
+
+        <%= f.password_field :password, placeholder: "Password" %><br>
+
+        <%= f.password_field :password_confirmation, placeholder: "Confirm" %><br>
+      <%= f.submit "Create" %>
+    <% end %>
+  </div>
+

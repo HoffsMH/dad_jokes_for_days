@@ -1,0 +1,11 @@
+<% if session[:user] %>
+  Please log out Before switching User
+<%else %>
+  <%= form_for :user, url: {action: "create"}, html: {class: "login"} do |f| %> 
+        <%= f.text_field :email, placeholder: 'Email' %><br>
+        <%= f.password_field :password, placeholder: 'Password' %><br>
+
+        <%= f.submit "Login" %>
+  <% end %>
+
+<% end %>

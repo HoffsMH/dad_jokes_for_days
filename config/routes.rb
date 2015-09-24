@@ -3,11 +3,15 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resource :session
 
+  get '/login' => 'sessions#new'
+  get '/register' => 'users#new'
+  post '/register' => 'users#create'
   get '/jokes' => 'jokes#index'
 
   resources :categories, only: [:index]
   resources :items
   resource :cart, only: [:show, :delete, :edit, :update, :create]
+
   get "/:category" => "categories#show"
 
   # The priority is based upon order of creation: first created -> highest priority.
