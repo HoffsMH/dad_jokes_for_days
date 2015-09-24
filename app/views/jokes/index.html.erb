@@ -5,9 +5,9 @@
 <table class='table table-striped'>
 <% @jokes.each do |joke| %>
 <tr>
-    <td><%= joke.lead %>
-    <%= "....#{joke.punchline}" %> <span style="float:right;"><%= button_to "Select Joke", session_path(joke_id: joke) %><span></td>
-</tr>
+  <td><%= joke.lead %>
+  <%= "....#{joke.punchline}" %> <span style="float:right;"><%= button_to "Select Joke", session_path(joke_id: joke) %><span></td>
+  </tr>
 <% end %>
 <table>
 </div>
