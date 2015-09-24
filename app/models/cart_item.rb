@@ -10,4 +10,8 @@ class CartItem < SimpleDelegator
     price * @quantity
   end
 
+  def to_param
+    @item.id
+  end
+
 end
