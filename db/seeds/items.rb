@@ -1,4 +1,7 @@
 category = Category.find_by_name("T-shirts")
+# file = File.open("/path/to/your/local/image")
+# item.image = file
+# item.save
 category.items.create(name: "Mens  T-shirt", description: "100% Cotton", image_url: "http://flathash.com/fake_url_01", price: 10.43)
 category.items.create(name: "Womens T-shirt", description: "100% Cotton", image_url: "http://flathash.com/fake_url_02", price: 11.43)
 

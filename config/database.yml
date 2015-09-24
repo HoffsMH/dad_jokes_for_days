@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: dad_jokes_for_days_production
-  username: dad_jokes_for_days
-  password: <%= ENV['DAD_JOKES_FOR_DAYS_DATABASE_PASSWORD'] %>
