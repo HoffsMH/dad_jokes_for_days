@@ -78,6 +78,21 @@ textarea {
   background-color: red;
 }
 
+.add_to_cart_button {
+  display:inline;
+}
+.add_to_cart_button  form {
+  display:inline;
+}
+
+.price {
+  text-align: right;
+}
+
+.grand-total-row {
+  background-color: rgba(0,0,0, 0.15);
+}
+
 /*
 ===----------===----------===----------===----------===----------===
   Bootstrap
@@ -109,18 +124,6 @@ th{
   font-size: 25px;
 }
 
-
-.add_to_cart_button {
-  display:inline;
-}
-.add_to_cart_button  form {
-  display:inline;
-}
-
-.price {
-  text-align: right;
-}
-
-.grand-total-row {
-  background-color: rgba(0,0,0, 0.15);
+td{
+  font-size: 20px;
 }
