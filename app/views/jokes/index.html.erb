@@ -4,7 +4,7 @@
 <% @jokes.each do |joke| %>
 <tr>
   <td><%= joke.lead %>
-  <%= "....#{joke.punchline}" %> <span style="float:right;"><%= button_to "Select Joke", session_path(joke_id: @joke) %><span></td>
+  <%= "....#{joke.punchline}" %> <span style="float:right;"><%= button_to "Select Joke", session_path(joke_id: joke) %><span></td>
   </tr>
 <% end %>
 <table>
