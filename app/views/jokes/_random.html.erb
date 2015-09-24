@@ -1,0 +1,7 @@
+<%= link_to "Pick a joke for me!", jokes_random_joke_path %>
+<br><br>
+
+<div>
+  <li><%= @random_joke.lead %></li>
+  <%= "- #{@random_joke.punchline}" %><br><br>
+</div>
