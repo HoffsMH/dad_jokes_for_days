@@ -7,7 +7,7 @@
       <tr>
         <td><%= cart_item.name %></td>
         <td><%= cart_item.quantity%></td>
-        <td class='price'><span class='price'>$<%= number_with_delimiter(cart_item.price, :delimiter => ',') %></span></td>
+        <td class='price'><span class='price'>$<%= number_with_delimiter(cart_item.total, :delimiter => ',') %></span></td>
       </tr>
     <% end %>
   </tbody>
