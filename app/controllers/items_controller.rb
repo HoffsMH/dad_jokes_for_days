@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all.order(:name)
+    @items = Item.all
+    @random_joke = Joke.all.sample
   end
 end

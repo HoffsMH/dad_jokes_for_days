@@ -4,10 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :load_categories
 
-  helper_method :category_path, :cart_path
+  helper_method :category_path, :cart_path, :current_joke
 
   def category_path(category)
     "/" + category.dao
+  end
+
+  def current_joke
+    Joke.find(session[:joke_id])
   end
 
   def load_categories

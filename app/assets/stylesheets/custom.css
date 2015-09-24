@@ -127,3 +127,8 @@ th{
 td{
   font-size: 20px;
 }
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}

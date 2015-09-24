@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
+  resource :session
+
+  get '/jokes' => 'jokes#index'
 
   resources :categories, only: [:index]
   resources :items
