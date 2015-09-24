@@ -15,7 +15,7 @@ class CartsController < ApplicationController
         CartItem.new(item_dao, quantity)
       end
     end
-    @cart_total = grand_total
+    @cart_total = grand_total if @cart_items
   end
 
   private

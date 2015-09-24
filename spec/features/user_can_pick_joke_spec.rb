@@ -16,6 +16,7 @@ feature "when I visit home page" do
 
   xit 'adds the joke id to our session' do
     click_button 'Pick a random joke for me!'
+
     expect(session[:joke_id]).not_to be_nil
   end
 
