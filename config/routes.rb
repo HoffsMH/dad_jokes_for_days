@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/jokes' => 'jokes#index'
 
   resources :categories, only: [:index]
-  resources :items
+  resources :items, only: [:index, :show]
   resource :cart, only: [:show, :delete, :edit, :update, :create]
 
   get "/:category" => "categories#show"
