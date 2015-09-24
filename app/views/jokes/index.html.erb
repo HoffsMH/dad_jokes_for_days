@@ -1,8 +1,11 @@
 <h1>Joke List</h1>
-
+<div class='col-md-10 col-centered'>
+<table class='table table-striped'>
 <% @jokes.each do |joke| %>
-  <li><%= joke.lead %></li>
-  <%= "....#{joke.punchline}" %><br>
-  <%= button_to "Use this joke!", 'jokes/current_joke' method: :current_joke %>
-  <br><br>
+<tr>
+  <td><%= joke.lead %>
+  <%= "....#{joke.punchline}" %> <span style="float:right;"><%= button_to "Select Joke", session_path(joke_id: @joke) %><span></td>
+  </tr>
 <% end %>
+<table>
+</div>

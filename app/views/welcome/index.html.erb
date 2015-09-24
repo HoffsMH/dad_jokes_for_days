@@ -1,0 +1,29 @@
+<div class='row'>
+  <div><h1>Welcome to Dad Jokes.com</h1></div>
+</div>
+<div class='row'>
+<div class='col-md-5 summary'>
+  <h2>Start with Joke...</h2>
+<ul>
+  <%= render @jokes %>
+</ul>
+
+  <%= button_to "Pick a Joke for me!", session_path(joke_id: @joke) %>
+
+  <%= link_to "See all Jokes", jokes_path %>
+
+</div>
+
+<div class='col-md-6   summary'>
+  <h2>Or a Product</h2>
+<ul>
+  <li>ITEM</li>
+  <li>ITEM</li>
+  <li>ITEM</li>
+  <li>ITEM</li>
+  <li>ITEM</li>
+  <li>ITEM</li>
+  <li></li>
+</ul>
+</div>
+</div>

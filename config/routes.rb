@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
+  resource :session
 
   get '/jokes/random_joke' => "jokes#random_joke"
   get '/jokes' => 'jokes#index'
