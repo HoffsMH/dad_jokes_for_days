@@ -78,6 +78,11 @@ textarea {
   background-color: red;
 }
 
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
 .add_to_cart_button {
   display:inline;
 }
@@ -91,6 +96,32 @@ textarea {
 
 .grand-total-row {
   background-color: rgba(0,0,0, 0.15);
+}
+
+.joke-header {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.joke-list {
+  font-size: 15px;
+}
+
+.joke-heading {
+  color: blue;
+  font-family: "Comic Sans MS";
+  font-size: 35px;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.joke-lead {
+  color: green;
+}
+
+.joke-punchline {
+  color: red;
+  text-align: right;
 }
 
 /*
@@ -126,9 +157,4 @@ th{
 
 td{
   font-size: 20px;
-}
-
-.col-centered{
-    float: none;
-    margin: 0 auto;
 }

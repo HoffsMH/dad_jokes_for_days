@@ -9,11 +9,13 @@
 
 <%= render 'layouts/navbar' %>
 
-<div class="container well">
- <div class="flash flash-alert"><%= flash.alert %></div>
- <div class="flash flash-notice"><%= flash.notice %></div>
+<%= render 'layouts/joke' if current_joke %>
 
- <%= yield %>
+<div class="container well">
+  <div class="flash flash-alert"><%= flash.alert %></div>
+  <div class="flash flash-notice"><%= flash.notice %></div>
+
+  <%= yield %>
 </div>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
