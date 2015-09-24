@@ -4,10 +4,10 @@
       @jokes = Joke.all
     end
 
-    def current_joke
-      session[:joke_id] = @joke.id
-      redirect_to items_path
-    end
+    # def current_joke
+    #   session[:joke_id] = @joke.id
+    #   redirect_to items_path
+    # end
 
     def random_joke
       @random_joke = Joke.all.sample
