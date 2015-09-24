@@ -6,11 +6,11 @@ feature "when I visit home page" do
     visit '/'
   end
   it "has a random joke" do
-    expect(page).to have_button('Pick a random Joke for me!')
+    expect(page).to have_button('Pick a random joke for me!')
   end
 
   it  "redirects to /items" do
-    click_button 'Pick a random Joke for me!'
+    click_button 'Pick a random joke for me!'
     expect(current_path).to eq(items_path)
   end
 
