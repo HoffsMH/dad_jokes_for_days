@@ -93,6 +93,29 @@ textarea {
   background-color: rgba(0,0,0, 0.15);
 }
 
+.joke{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.joke-header{
+  color: blue;
+  font-family: "Comic Sans MS";
+  font-size: 35px;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.joke-lead{
+  color: green;
+}
+
+.joke-punchline{
+  color: red;
+  text-align: right;
+  font-size: 45px;
+}
+
 /*
 ===----------===----------===----------===----------===----------===
   Bootstrap

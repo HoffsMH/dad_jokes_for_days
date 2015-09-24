@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_joke
-    Joke.find(session[:joke_id])
+    Joke.find(session[:joke_id]) if session[:joke_id]
   end
 
   def load_categories
