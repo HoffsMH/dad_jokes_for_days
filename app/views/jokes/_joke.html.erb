@@ -1,5 +1,5 @@
-<div class="row well">
+<div class="">
   <div class="joke-list joke-lead"><%= joke.lead %></div>
   <div class="joke-list joke-punchline"><%= joke.punchline %></div>
-  <div class="joke-list text-right"><%= button_to "Select Joke", session_path(joke_id: @joke) %></div>
+  <div class="joke-list text-right"><%= button_to "Select Joke", session_path(joke_id: joke.id) %></div>
 </div>
