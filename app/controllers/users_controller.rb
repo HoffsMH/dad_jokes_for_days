@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     if session[:user]
-      flash[:notice] = 'Please log out before creating a new user'
+      flash[:alert] = 'Please log out before creating a new user'
       redirect_to controller: 'welcome', action: 'index'
     end
 
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       flash[:notice] = 'user successfully created'
       redirect_to controller: 'welcome', action: 'index'
     else
-      flash[:notice] = user.errors.full_messages.first
+      flash[:alert] = user.errors.full_messages.first
       redirect_to action: 'new'
     end
   end
