@@ -1,0 +1,19 @@
+<table class='table'>
+  <thead>
+    <tr><th>Item</th><th>Quantity</th><th>Price</th></tr>
+  </thead>
+  <tbody>
+    <% @cart_items.each do |cart_item| %>
+      <tr>
+        <td><%= cart_item.name %></td>
+        <td><%= cart_item.quantity%></td>
+        <td class='price'><span class='price'>$<%= number_with_delimiter(cart_item.price, :delimiter => ',') %></span></td>
+      </tr>
+    <% end %>
+  </tbody>
+   <tfoot class='grand-total-row'>
+    <td>Total:</td>
+    <td></td>
+    <td class='price'>$<%= number_with_delimiter(@cart_total, :delimiter => ',') %></td>
+  </tfoot>
+</table>
