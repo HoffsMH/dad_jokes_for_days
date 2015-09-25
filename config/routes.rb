@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resource :session
 
   get '/login' => 'sessions#new'
+  delete '/logout' => 'session#destroy'
   get '/register' => 'users#new'
   post '/register' => 'users#create'
   get '/jokes' => 'jokes#index'

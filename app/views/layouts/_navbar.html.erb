@@ -35,7 +35,7 @@
 
           <% if current_user %>
             <li><%= link_to "My Account", "/profile" %></li>
-            <li><a href="/logout">Logout</a></li>
+            <li><%= link_to "Logout", session_path, method: :delete %>
           <% else %>
             <li><%= link_to "Register", "/register" %></li>
             <li><a href='/login'>Login</a></li>
