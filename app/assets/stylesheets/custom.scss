@@ -1,160 +1,47 @@
-.form-inline{
-  display: inline;
+.navbar {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 body {
-  background-image: image-url("bg_crazy_al.jpg");
-  background-repeat: no-repeat;
+  background: image-url("raw/goofy-dad-bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-attachment: fixed;
 }
 
-h1 {
-    text-shadow: 3px 3px #ffffff;
-}
 
-select {
-  font-size: 25px;
-}
 
-input[type="text"] {
-  width: 50%;
-}
 
-input[type="password"] {
-  width: 50%;
-}
-
-textarea {
-  width: 50%;
-  height: 100px;
-}
-
-.headshot img{
-  background-color: white;
-}
-
-.summary img{
-  height: 200px;
-}
-
-.summary{
-  background-color: white;
-  border-color: black;
-  border-radius: 15px;
-  border-style: solid;
-  display: inline-block;
-  font-size: 25px;
-  margin: 4px;
-  padding: 4px;
-}
-
-.tiny img{
-  height: 50px;
-}
-
-.main-cell{
-  width: 50%;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.small-cell{
-  width: 1%;
-}
-
-.flash{
+// HEADER STUFF
+.dad-header {
+  height: 50vh;
   text-align: center;
-  color: white;
-  font-weight: bold;
-  font-size: 25px;
 }
 
-.flash-notice{
-  background-color: green;
+.dad-header h1 {
+  color: #ffffff;
+  font-size: 5.2em;
+  font-weight: 1000;
+  position: relative;
+  top: 30%;
 }
-
-.flash-alert{
-  background-color: red;
-}
-
-.col-centered{
-    float: none;
-    margin: 0 auto;
-}
-
-.add_to_cart_button {
-  display:inline;
-}
-.add_to_cart_button  form {
-  display:inline;
-}
-
-.price {
-  text-align: right;
-}
-
-.grand-total-row {
-  background-color: rgba(0,0,0, 0.15);
-}
+// CURRENT JOKE STUFF
 
 .joke-header {
-  font-size: 25px;
-  font-weight: bold;
+  display: inline;
 }
-
-.joke-list {
-  font-size: 15px;
-}
-
-.joke-heading {
-  color: blue;
-  font-family: "Comic Sans MS";
-  font-size: 35px;
-  text-decoration: underline;
+.dad-joke-row {
+  margin-top: 30px;
   text-align: center;
 }
+.dad-joke-row .well {
+  height: 12px;
 
-.joke-lead {
-  color: green;
 }
 
-.joke-punchline {
-  color: red;
-  text-align: right;
-}
-
-/*
-===----------===----------===----------===----------===----------===
-  Bootstrap
-===----------===----------===----------===----------===----------===
-*/
-
-.well {
-  background-color: rgba(244, 244, 244, .8);
-  border-radius: 10px;
-  border: 3px solid #b3b3b3;
-  /*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);*/
-}
-
-.table-bordered {
-  border: 2px solid #b3b3b3;
-}
-
-tr:hover td {
-  background-color: #cccccc;
-}
-
-.btn {
-  margin: 1px;
-  border-radius: 50px;
-}
-
-th{
-  font-size: 25px;
-}
-
-td{
-  font-size: 20px;
+.dad-joke-row .panel-body {
+  padding-top: 4px;
+  padding-bottom: 6px;
 }
