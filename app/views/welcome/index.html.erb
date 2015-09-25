@@ -9,7 +9,7 @@
         </div>
 
         <div class="text-center">
-          <%= button_to "Pick a random joke for me!", session_path(joke_id: @joke), method: :patch %>
+          <%= button_to "Pick a random joke for me!", sessions_path(joke_id: @joke), method: :patch %>
           <%= link_to "See all Jokes", jokes_path %>
         </div>
     </div>

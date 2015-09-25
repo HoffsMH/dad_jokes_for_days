@@ -30,9 +30,9 @@
 
         <% if current_user %>
           <li><%= link_to "My Account", "/profile" %></li>
-          <li><%= link_to "Logout", session_path, method: :delete %>
+          <li><%= link_to "Logout", logout_path, method: :delete %>
         <% else %>
-          <li><%= link_to "Register", "/register" %></li>
+          <li><%= link_to "Create Account", "/register" %></li>
           <li><a href='/login'>Login</a></li>
         <% end %>
         <li><a href="/cart">Cart</a></li>
