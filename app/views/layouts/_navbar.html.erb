@@ -31,10 +31,17 @@
           <li><%#= link_to "Hi, #{current_user.username.capitalize}", profile_path %></li>
           <li><%#= link_to "Logout", logout_path, method: :delete %></li>
         <%# else %>
-          <li><%= link_to "Register", "/register" %></li>
           <li><%= link_to "All Products", items_path %></li>
-          <li><a href="/login">Login</a></li>
+
+          <% if current_user %>
+            <li><%= link_to "My Account", "/profile" %></li>
+            <li><a href="/logout">Logout</a></li>
+          <% else %>
+            <li><%= link_to "Register", "/register" %></li>
+            <li><a href='/login'>Login</a></li>
+          <% end %>
           <li><a href="/cart">Cart</a></li>
+
         <%# end %>
       </ul>
     </div><!-- /.navbar-collapse -->
