@@ -1,0 +1,45 @@
+.navbar {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+body {
+  background: image-url("raw/goofy-dad-bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+// HEADER STUFF
+.dad-header {
+  height: 50vh;
+  text-align: center;
+}
+
+.dad-header h1 {
+  color: #ffffff;
+  font-size: 5.2em;
+  font-weight: 1000;
+  position: relative;
+  top: 30%;
+}
+// CURRENT JOKE STUFF
+
+.joke-header {
+  display: inline;
+}
+.dad-joke-row {
+  margin-top: 30px;
+  text-align: center;
+}
+.dad-joke-row .well {
+  height: 12px;
+
+}
+
+.dad-joke-row .panel-body {
+  padding-top: 4px;
+  padding-bottom: 6px;
+}

@@ -1,27 +1,20 @@
+<%= render 'layouts/header' %>
 <div class='row'>
-  <div><h1>Welcome to Dad Jokes.com</h1></div>
-</div>
-<div class='row'>
-<div class='col-md-5 summary'>
-  <h2>Start with Joke...</h2>
-  <%= render @jokes %>
+<div class='col-md-5'>
+  <div class='panel panel-default'>
+    <div class='panel-heading'>Pick a Joke</div>
+      <div class='panel-body'>
+        <div class='list-group'> 
+        <%= render @jokes %>
+        </div>
 
-  <div class="text-center">
-    <%= button_to "Pick a random joke for me!", session_path(joke_id: @joke) %>
-    <%= link_to "See all Jokes", jokes_path %>
+        <div class="text-center">
+          <%= button_to "Pick a random joke for me!", session_path(joke_id: @joke) %>
+          <%= link_to "See all Jokes", jokes_path %>
+        </div>
+    </div>
   </div>
 
 </div>
 
-<div class='col-md-6   summary'>
-  <h2>Or a Product</h2>
-<ul>
-  <li>ITEM</li>
-  <li>ITEM</li>
-  <li>ITEM</li>
-  <li>ITEM</li>
-  <li>ITEM</li>
-  <li>ITEM</li>
-</ul>
-</div>
 </div>

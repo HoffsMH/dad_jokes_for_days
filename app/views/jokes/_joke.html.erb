@@ -1,5 +1,17 @@
-<div class="">
-  <div class="joke-list joke-lead"><%= joke.lead %></div>
-  <div class="joke-list joke-punchline"><%= joke.punchline %></div>
-  <div class="joke-list text-right"><%= button_to "Select Joke", session_path(joke_id: joke.id) %></div>
-</div>
+
+  <% def some_method %>
+    <%="#{joke.lead}" + "<div>" + "#{joke.punchline}" %>
+  <% end %>
+
+  <%= link_to raw("<div>#{joke.lead}</div> <div>#{joke.punchline}</div>"), session_path(joke_id: joke.id), class: "list-group-item", method: :post %>
+
+<%# <a class="list-group-item"> %>
+<%#   <button class.. %>
+<%#   <div class="joke-list joke-lead"><%= joke.lead %1></div> %>
+<%#   <div class="joke-list joke-punchline"><%= joke.punchline %1></div> %>
+<%#   <div class="joke-list text-right"><%= button_to "Select Joke", session_path(joke_id: joke.id) %1></div> %>
+<%# </a> %>
+
+
+<%# <form class="button_to" method="post" action="/session?joke_id=12"><input type="submit" value="Select Joke"><input type="hidden" name="authenticity_token" value="J3/FIItRx9UfGAP4/h2CdBRTHMw4vEkiRhLwC0f1Jy9mhra/Qi4+Owjby1AMVrneSgHUkpqCtBhlLzLGCGDJ7g=="></form> %>
+

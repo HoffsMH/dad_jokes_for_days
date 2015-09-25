@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap-sprockets
+//= require google-plus-theme-js/scripts
 //= require_tree .

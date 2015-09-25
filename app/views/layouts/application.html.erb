@@ -11,17 +11,17 @@
 
 <%= render 'layouts/joke' if current_joke %>
 
-<div class="container well">
+<div class="container">
   <div class="flash flash-alert"><%= flash.alert %></div>
   <div class="flash flash-notice"><%= flash.notice %></div>
 
   <%= yield %>
 </div>
 
-  <%# <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %1> %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <%# <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> %>
+  <%# <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> %>
 </body>
 </html>
