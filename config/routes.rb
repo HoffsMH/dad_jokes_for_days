@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'session#destroy'
   get '/register' => 'users#new'
   post '/register' => 'users#create'
+  get '/dashboard' => 'users#show'
   get '/jokes' => 'jokes#index'
 
   resources :categories, only: [:index]
