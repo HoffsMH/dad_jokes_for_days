@@ -4,12 +4,12 @@
   <div class='panel panel-default'>
     <div class='panel-heading'>Pick a Joke</div>
       <div class='panel-body'>
-        <div class='list-group'> 
+        <div class='list-group'>
         <%= render @jokes %>
         </div>
 
         <div class="text-center">
-          <%= button_to "Pick a random joke for me!", session_path(joke_id: @joke) %>
+          <%= button_to "Pick a random joke for me!", session_path(joke_id: @joke), method: :patch %>
           <%= link_to "See all Jokes", jokes_path %>
         </div>
     </div>
