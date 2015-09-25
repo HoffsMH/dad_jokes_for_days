@@ -1,9 +1,4 @@
-
-  <% def some_method %>
-    <%="#{joke.lead}" + "<div>" + "#{joke.punchline}" %>
-  <% end %>
-
-  <%= link_to raw("<div>#{joke.lead}</div> <div>#{joke.punchline}</div>"), session_path(joke_id: joke.id), class: "list-group-item", method: :post %>
+<%= link_to raw("<div>#{joke.lead}</div> <div>#{joke.punchline}</div>"), session_path(joke_id: joke.id), class: "list-group-item", method: :patch %>
 
 <%# <a class="list-group-item"> %>
 <%#   <button class.. %>
@@ -14,4 +9,3 @@
 
 
 <%# <form class="button_to" method="post" action="/session?joke_id=12"><input type="submit" value="Select Joke"><input type="hidden" name="authenticity_token" value="J3/FIItRx9UfGAP4/h2CdBRTHMw4vEkiRhLwC0f1Jy9mhra/Qi4+Owjby1AMVrneSgHUkpqCtBhlLzLGCGDJ7g=="></form> %>
-
