@@ -7,21 +7,23 @@
 </head>
 <body>
 
-<%= render 'layouts/navbar' %>
+  <%= render 'layouts/navbar' %>
 
-<%= render 'layouts/joke' if current_joke %>
 
-<div class="container">
-  <div class="flash flash-alert"><%= flash.alert %></div>
-  <div class="flash flash-notice"><%= flash.notice %></div>
-
-  <%= yield %>
-</div>
-
+  <div class="container">
+    <div class="row dad-nav-spacer"> </div>
+    <% if flash.alert %>
+      <%= render 'layouts/flash_alert' %>
+    <% end %>
+    
+    <% if flash.notice %>
+      <%= render 'layouts/flash_notice' %>
+    <% end %>
+    
+    <%= yield %>
+  </div>
+  
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
-
-  <%# <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> %>
-  <%# <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> %>
 </body>
 </html>

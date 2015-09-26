@@ -46,7 +46,7 @@ class CartsController < ApplicationController
   def new_quantity
     if params[:commit] == "Update Quantity"
       params[:item][:quantity].to_i
-    elsif params[:commit] == "Delete"
+    elsif params[:commit] == "Remove"
       0
     end
   end

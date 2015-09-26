@@ -1,20 +1,33 @@
 <%= render 'layouts/header' %>
 <div class='row'>
-<div class='col-md-5'>
-  <div class='panel panel-default'>
-    <div class='panel-heading'>Pick a Joke</div>
+  <div class='col-md-7'>
+    <div class='panel panel-default'>
+      <div class='panel-heading'>Pick a Joke</div>
       <div class='panel-body'>
         <div class='list-group'>
-        <%= render @jokes %>
+          <%= render @jokes %>
         </div>
-
+        
         <div class="text-center">
-          <%= button_to "Pick a random joke for me!", session_path(joke_id: @joke), method: :patch %>
+          <%= button_to "Pick a random joke for me!", sessions_path(joke_id: @joke), method: :patch, class: "btn btn-md btn-primary" %>
+          <br>
           <%= link_to "See all Jokes", jokes_path %>
         </div>
+      </div>
     </div>
+    
   </div>
-
-</div>
-
+  
+  <div class='col-md-4'>
+    <div class='panel panel-default'>
+      <div class='panel-heading'>Popular Items</div>
+      <div class='panel-body'>
+        <div class='list-group'>
+          <%= render @items %>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
 </div>

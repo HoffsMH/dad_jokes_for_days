@@ -1,10 +1,10 @@
-<%= link_to raw("<div>#{joke.lead}</div> <div>#{joke.punchline}</div>"), session_path(joke_id: joke.id), class: "list-group-item", method: :patch %>
+<%= link_to raw("<div>#{joke.lead}</div> <div>#{joke.punchline}</div>"), sessions_path(joke_id: joke.id), class: "list-group-item", method: :patch %>
 
 <%# <a class="list-group-item"> %>
 <%#   <button class.. %>
 <%#   <div class="joke-list joke-lead"><%= joke.lead %1></div> %>
 <%#   <div class="joke-list joke-punchline"><%= joke.punchline %1></div> %>
-<%#   <div class="joke-list text-right"><%= button_to "Select Joke", session_path(joke_id: joke.id) %1></div> %>
+<%#   <div class="joke-list text-right"><%= button_to "Select Joke", sessions_path(joke_id: joke.id) %1></div> %>
 <%# </a> %>
 
 

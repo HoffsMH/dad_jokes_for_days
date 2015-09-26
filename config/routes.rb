@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
-  resource :session
+  resource :sessions, only: [:update]
 
   get '/login' => 'sessions#new'
-  delete '/logout' => 'session#destroy'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
   get '/register' => 'users#new'
   post '/register' => 'users#create'
   get '/dashboard' => 'users#show'
