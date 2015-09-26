@@ -1,12 +1,30 @@
 <% if session[:user] %>
-  Please log out Before switching User
-<%else %>
-  <h1>Login</h1><hr>
-  <%= form_for :user, url: {action: "create"}, html: {class: "login"} do |f| %> 
-        <%= f.text_field :email, placeholder: 'Email' %><br>
-        <%= f.password_field :password, placeholder: 'Password' %><br>
+Please log out Before switching User
+<% else %>
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <h1>Login</h1>
+      </div>
+    </div>
+  </div>
+</div>
 
-        <%= f.submit "Login" %>
-  <% end %>
+<div class='row text-center'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <%= form_for :user, url: {action: "create"}, html: {class: "login"} do |f| %> 
+        <%= f.text_field :email, placeholder: 'Email' , class: "form-control input-lg" %><br>
+        <%= f.password_field :password, placeholder: 'Password' , class: "form-control input-lg" %><br>
+        
+        <%= f.submit "Login", class: "btn btn-md btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <% end %>
