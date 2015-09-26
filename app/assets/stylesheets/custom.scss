@@ -25,21 +25,18 @@ body {
   position: relative;
   top: 30%;
 }
-// CURRENT JOKE STUFF
 
-.joke-header {
-  display: inline;
+.dad-nav-spacer {
+  height: 200px;
+  
 }
-.dad-joke-row {
-  margin-top: 30px;
+
+//current joke stuff
+
+.dad-current-joke {
+  height: 10px;
+  margin-bottom: 0px;
   text-align: center;
-}
-.dad-joke-row .well {
-  height: 12px;
-
-}
-
-.dad-joke-row .panel-body {
-  padding-top: 4px;
-  padding-bottom: 6px;
+  padding: 2px;
+  
 }
