@@ -10,7 +10,7 @@ class CartsController < ApplicationController
   end
 
   def show
-    @cart_items = if session[:cart]
+    @cart_items = if session[:cart] && !session[:cart].empty?
       session[:cart].map do |item_dao, quantity|
         CartItem.new(item_dao, quantity)
       end
@@ -19,9 +19,24 @@ class CartsController < ApplicationController
   end
 
   def update
-    session[:cart][params[:id]] = params[:item][:quantity].to_i
+    if params[:commit] == "Update Quantity"
+      new_quantity = params[:item][:quantity].to_i
+    elsif params[:commit] == "Delete"
+      new_quantity = 0
+    end
+
+    if new_quantity > 0
+      session[:cart][params[:id]] = new_quantity
+    else
+      session[:cart].delete(params[:id])
+    end
     flash[:notice] = "Quantity updated"
     redirect_to cart_path
+  end
+
+  def destroy
+    byebug
+    session[:cart].delete(params[:id])
   end
 
   private

@@ -7,7 +7,13 @@
       <%= form_for cart_item, method: :patch do |f| %>
       <tr>
         <td class="tiny"><%= link_to image_tag(cart_item.image_url), cart_item %><%= link_to cart_item.name, cart_item %></td>
-        <td class="text-right"><%= f.text_field :quantity %><%= f.submit "Update Quantity" %><% end %><%#= cart_item.quantity%></td>
+        <td class="text-right">
+          <%= f.text_field :quantity %><br>
+          <%= f.submit "Update Quantity", class: "btn btn-sm btn-success" %><br><br>
+          <%= f.submit "Delete", class: "btn btn-sm btn-danger" %>
+          <% end %>
+
+        </td>
         <td class='price'><span class='price'>$<%= number_with_delimiter(cart_item.price, :delimiter => ',') %></span></td>
         <td class='price'><span class='price'>$<%= number_with_delimiter(cart_item.total, :delimiter => ',') %></span></td>
       </tr>
@@ -20,3 +26,9 @@
     <td class='price'>$<%= number_with_delimiter(@cart_total, :delimiter => ',') %></td>
   </tfoot>
 </table>
+
+
+
+<%#= link_to cart_path, id: "delete", method: :delete, class: "btn btn-danger" do %>
+  <!-- <i class="glyphicon glyphicon-trash"></i> -->
+  <%# end %>
