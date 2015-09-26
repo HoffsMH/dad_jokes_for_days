@@ -92,8 +92,9 @@ describe 'a new user signin up', type: :feature do
 
     xit "can not create an account if the user is already signed in" do
       visit "/register"
-      # what should the current path be?????? Shpuld they even see the sign
-      #up page or should it just be not working if they try to sign up?
+      # what should the current path be? Should they even see the sign
+      # up page or should see that page but the sign up funtionality not work
+      # if they try to sign up?
       expect(page).to have_content("Please sign out before creating a new account")
     end
   end
