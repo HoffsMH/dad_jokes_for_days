@@ -1,14 +1,39 @@
-  <h1>Sign Up</h1>
-  <div class='well'>
-<%= form_for :new_user, url: {action: "create"}, html: {class: "signup"} do |f| %>
-        <%= f.text_field :email, placeholder: "email" %><br>
-
-        <%= f.text_field :user_name, placeholder: "User Name" %><br>
-
-        <%= f.password_field :password, placeholder: "Password" %><br>
-
-        <%= f.password_field :password_confirmation, placeholder: "Confirm" %><br>
-      <%= f.submit "Create" %>
-    <% end %>
+<% if session[:user] %>
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <h1>Please Log out before making a new Account</h1>
+      </div>
+    </div>
   </div>
-
+</div>
+<% else %>
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <h1>Sign Up</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='row text-center'>
+  <div class='col-md-6 col-centered'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <%= form_for :new_user, url: {action: "create"}, html: {class: "signup"} do |f| %>
+        <%= f.text_field :email, placeholder: "email", class: "form-control input-md" %><br>
+        
+        <%= f.text_field :user_name, placeholder: "User Name", class: "form-control input-md" %><br>
+        
+        <%= f.password_field :password, placeholder: "Password", class: "form-control input-md" %><br>
+        
+        <%= f.password_field :password_confirmation, placeholder: "Confirm", class: "form-control input-md"  %><br>
+        <%= f.submit "Create", class: "btn btn-md btn-primary"  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
