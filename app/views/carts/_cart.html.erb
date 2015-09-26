@@ -3,6 +3,7 @@
     <tr><th>Item</th><th class="text-right">Quantity</th><th class="text-right">Unit Price</th><th class="text-right">Totals</th></tr>
   </thead>
   <tbody>
+
     <% @cart_items.each do |cart_item| %>
       <tr>
         <td class="tiny"><%= link_to image_tag(cart_item.image_url), cart_item %><%= link_to cart_item.name, cart_item %></td>
