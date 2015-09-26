@@ -65,12 +65,9 @@ describe 'a new user signin up', type: :feature do
       expect(current_path).to eq('/register')
       expect(page).to have_content("Password confirmation doesn't match Password")
     end
-
-
   end
 
-    describe "the user DOES already exist" do
-
+  describe "the user DOES already exist" do
     before(:each) do
       visit "/"
       click_link("Create Account")
@@ -98,6 +95,6 @@ describe 'a new user signin up', type: :feature do
       # what should the current path be?????? Shpuld they even see the sign
       #up page or should it just be not working if they try to sign up?
       expect(page).to have_content("Please sign out before creating a new account")
+    end
   end
-
 end
