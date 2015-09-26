@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:user][:password])
       session[:user] = user.id
       flash[:notice] = "The Dad welcomes you, #{user.user_name}."
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       flash[:notice] = "Invalid Login"
       redirect_to action: 'new'
