@@ -24,9 +24,9 @@ feature "Items page - a guest" do
     visit "/"
     click_link "All Products"
 
-    page.should have_xpath("//img[@src=\"/images/itema.jpg\"]")
-    page.should have_xpath("//img[@src=\"/images/itemb.jpg\"]")
-    page.should have_xpath("//img[@src=\"/images/itemc.jpg\"]")
+    expect(page).to have_xpath("//img[@src=\"/images/itema.jpg\"]")
+    expect(page).to have_xpath("//img[@src=\"/images/itemb.jpg\"]")
+    expect(page).to have_xpath("//img[@src=\"/images/itemc.jpg\"]")
   end
 
   it "can see a price for each item" do
