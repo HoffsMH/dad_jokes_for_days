@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe 'a new user signin up', type: :feature do
+describe 'a new user signs up', type: :feature do
 
   describe "the user does not already exist" do
 
@@ -71,8 +71,8 @@ describe 'a new user signin up', type: :feature do
     before(:each) do
       visit "/"
       click_link("Create Account")
-      fill_in('new_user[email]', with: 'Jeff@gmail.com')
-      fill_in('new_user[user_name]', with: 'Jeffy')
+      fill_in('new_user[email]', with: 'Jason@gmail.com')
+      fill_in('new_user[user_name]', with: 'Jay')
       fill_in('new_user[password]', with: 'pass')
       fill_in('new_user[password_confirmation]', with: 'pass')
       click_button "Create"
@@ -82,7 +82,7 @@ describe 'a new user signin up', type: :feature do
       click_link("Logout")
       visit "/"
       click_link("Create Account")
-      fill_in('new_user[email]', with: 'Jeff@gmail.com')
+      fill_in('new_user[email]', with: 'Jason@gmail.com')
       fill_in('new_user[user_name]', with: 'J')
       fill_in('new_user[password]', with: 'pa')
       fill_in('new_user[password_confirmation]', with: 'pa')
