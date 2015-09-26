@@ -3,6 +3,9 @@ class UsersController < ApplicationController
 
   end
 
+  def show
+  end
+
   def create
     if session[:user]
       flash[:alert] = 'Please log out before creating a new user'
@@ -11,8 +14,9 @@ class UsersController < ApplicationController
 
     user = User.new(new_user_params)
     if user.save
+      session[:user] = user.id
       flash[:notice] = 'user successfully created'
-      redirect_to controller: 'welcome', action: 'index'
+      redirect_to dashboard_path
     else
       flash[:alert] = user.errors.full_messages.first
       redirect_to action: 'new'
