@@ -1,11 +1,21 @@
-<h1 class='text-left'>Your Cart</h1>
-<hr>
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <h1 class='text-left'>Your Cart</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class='col-md-7'>
-
-<% if @cart_items %>
-  <%= render 'cart' %>
-<% else %>
-  <%= render 'empty_cart' %>
-<% end %>
-
+  <div class='panel panel-default'>
+    <div class='panel-body'>
+      <% if @cart_items %>
+      <%= render 'cart' %>
+      <% else %>
+      <%= render 'empty_cart' %>
+      <% end %>
+    </div>
+  </div>
 </div>
