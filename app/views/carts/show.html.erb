@@ -9,11 +9,13 @@
 </div>
 
 <div class='col-md-7'>
-
-<% if @cart_items %>
-  <%= render 'cart' %>
-<% else %>
-  <%= render 'empty_cart' %>
-<% end %>
-
+  <div class='panel panel-default'>
+    <div class='panel-body'>
+      <% if @cart_items %>
+      <%= render 'cart' %>
+      <% else %>
+      <%= render 'empty_cart' %>
+      <% end %>
+    </div>
+  </div>
 </div>
