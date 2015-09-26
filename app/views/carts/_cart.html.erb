@@ -27,8 +27,6 @@
   </tfoot>
 </table>
 
-
-
-<%#= link_to cart_path, id: "delete", method: :delete, class: "btn btn-danger" do %>
-  <!-- <i class="glyphicon glyphicon-trash"></i> -->
-  <%# end %>
+<div class="text-right">
+  <%= link_to "Delete Cart", cart_path, id: "delete", method: :delete, class: "btn btn-warning" %>
+</div>

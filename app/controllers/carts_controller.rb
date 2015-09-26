@@ -19,30 +19,36 @@ class CartsController < ApplicationController
   end
 
   def update
-    if params[:commit] == "Update Quantity"
-      new_quantity = params[:item][:quantity].to_i
-    elsif params[:commit] == "Delete"
-      new_quantity = 0
-    end
-
     if new_quantity > 0
       session[:cart][params[:id]] = new_quantity
+      flash[:notice] = "Quantity updated"
     else
       session[:cart].delete(params[:id])
+      flash[:notice] = "Item deleted from cart"
     end
-    flash[:notice] = "Quantity updated"
+
     redirect_to cart_path
   end
 
   def destroy
-    byebug
-    session[:cart].delete(params[:id])
+    # byebug
+    session.delete(:cart)
+    flash[:notice] = "Cart deleted!"
+    redirect_to cart_path
   end
 
   private
 
   def grand_total
     @cart_items.reduce(0){|sum, cart_item| sum += cart_item.total}
+  end
+
+  def new_quantity
+    if params[:commit] == "Update Quantity"
+      params[:item][:quantity].to_i
+    elsif params[:commit] == "Delete"
+      0
+    end
   end
 
 end
