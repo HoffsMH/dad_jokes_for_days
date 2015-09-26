@@ -4,9 +4,16 @@
   </thead>
   <tbody>
     <% @cart_items.each do |cart_item| %>
+
+      <%= form_for cart_item, method: :patch do |f| %>
       <tr class="cart-row">
         <td class="tiny"><%= link_to image_tag(cart_item.image_url, class: "img-responsive"), cart_item %><%= link_to cart_item.name, cart_item %></td>
-        <td class="text-right"><%= cart_item.quantity%></td>
+        <td class="text-right">
+          <%= f.text_field :quantity, class: "form-control input-xs" %><br>
+          <%= f.submit "Update Quantity", class: "btn btn-sm btn-success" %><br><br>
+          <%= f.submit "Remove", class: "btn btn-sm btn-danger" %>
+          <% end %>
+        </td>
         <td class='price'><span class='price'>$<%= number_with_delimiter(cart_item.price, :delimiter => ',') %></span></td>
         <td class='price'><span class='price'>$<%= number_with_delimiter(cart_item.total, :delimiter => ',') %></span></td>
       </tr>
@@ -19,3 +26,7 @@
     <td class='price'>$<%= number_with_delimiter(@cart_total, :delimiter => ',') %></td>
   </tfoot>
 </table>
+
+<div class="text-right">
+  <%= link_to "Delete Cart", cart_path, id: "delete", method: :delete, class: "btn btn-warning" %>
+</div>
