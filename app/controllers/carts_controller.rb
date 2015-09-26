@@ -6,7 +6,7 @@ class CartsController < ApplicationController
     @cart_items = session[:cart]
 
     flash[:notice] = 'Added ' + Item.find_by_dao(params[:item_id]).name
-    redirect_to '/cart'
+    redirect_to cart_path
   end
 
   def show
@@ -16,6 +16,12 @@ class CartsController < ApplicationController
       end
     end
     @cart_total = grand_total if @cart_items
+  end
+
+  def update
+    session[:cart][params[:id]] = params[:item][:quantity].to_i
+    flash[:notice] = "Quantity updated"
+    redirect_to cart_path
   end
 
   private

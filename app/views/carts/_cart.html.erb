@@ -3,11 +3,11 @@
     <tr><th>Item</th><th class="text-right">Quantity</th><th class="text-right">Unit Price</th><th class="text-right">Totals</th></tr>
   </thead>
   <tbody>
-
     <% @cart_items.each do |cart_item| %>
+      <%= form_for cart_item, method: :patch do |f| %>
       <tr>
         <td class="tiny"><%= link_to image_tag(cart_item.image_url), cart_item %><%= link_to cart_item.name, cart_item %></td>
-        <td class="text-right"><%= cart_item.quantity%></td>
+        <td class="text-right"><%= f.text_field :quantity %><%= f.submit "Update Quantity" %><% end %><%#= cart_item.quantity%></td>
         <td class='price'><span class='price'>$<%= number_with_delimiter(cart_item.price, :delimiter => ',') %></span></td>
         <td class='price'><span class='price'>$<%= number_with_delimiter(cart_item.total, :delimiter => ',') %></span></td>
       </tr>

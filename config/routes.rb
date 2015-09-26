@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index]
   resources :items, only: [:index, :show]
-  resource :cart, only: [:show, :delete, :edit, :update, :create]
+  resource :cart, only: [:show, :delete, :create]
+  patch '/items/:id' => 'carts#update'
 
   get "/:category" => "categories#show"
 
