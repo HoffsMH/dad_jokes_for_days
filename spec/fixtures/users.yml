@@ -1,0 +1,16 @@
+1:
+  id: 1
+  user_name: "Jeffy"
+  email: "jeff@gmail.com"
+  password: "pass"
+2:
+  id: 2
+  user_name: "Ryan"
+  email: "ryan@gmail.com"
+  password: "password"
+
+3:
+  id: 3
+  user_name: "Jeffy"
+  email: "jeff@gmail.com"
+  password: "wordpass"

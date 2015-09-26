@@ -23,8 +23,8 @@ feature "Categories page - a guest" do
     visit "/"
     click_link "All Categories"
 
-    page.should have_xpath("//img[@src=\"/images/categorya.jpg\"]")
-    page.should have_xpath("//img[@src=\"/images/categoryb.jpg\"]")
-    page.should have_xpath("//img[@src=\"/images/categoryc.jpg\"]")
+    expect(page).to have_xpath("//img[@src=\"/images/categorya.jpg\"]")
+    expect(page).to have_xpath("//img[@src=\"/images/categoryb.jpg\"]")
+    expect(page).to have_xpath("//img[@src=\"/images/categoryc.jpg\"]")
   end
 end
