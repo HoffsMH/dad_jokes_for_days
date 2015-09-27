@@ -3,7 +3,6 @@ class CartsController < ApplicationController
     session[:cart] ||= {}
     session[:cart][params[:item_id]] ||= 0
     session[:cart][params[:item_id]] += 1
-    @cart_items = session[:cart]
 
     flash[:notice] = 'Added ' + Item.find_by_dao(params[:item_id]).name
     redirect_to cart_path
@@ -23,15 +22,15 @@ class CartsController < ApplicationController
       session[:cart][params[:id]] = new_quantity
       flash[:notice] = "Quantity updated"
     else
+      item = Item.find_by_dao(params[:id])
+      flash[:notice] = "Successfully removed <a href='/items/#{item.dao}'>#{item.name}</a> from your cart."
       session[:cart].delete(params[:id])
-      flash[:notice] = "Item deleted from cart"
     end
 
     redirect_to cart_path
   end
 
   def destroy
-    # byebug
     session.delete(:cart)
     flash[:notice] = "Cart deleted!"
     redirect_to cart_path

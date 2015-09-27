@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates_confirmation_of :password
+  has_many :orders
 end
