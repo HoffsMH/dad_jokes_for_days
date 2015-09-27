@@ -22,7 +22,7 @@ class CartsController < ApplicationController
 
   def update
     if new_quantity > 0
-      session[:cart][params[:id]] = new_quantity
+      OrderItem.find(params[:order_item][:order_item_id])
       flash[:notice] = "Quantity updated"
     else
       item = Item.find_by_dao(params[:id])
@@ -47,7 +47,7 @@ class CartsController < ApplicationController
 
   def new_quantity
     if params[:commit] == "Update Quantity"
-      params[:item][:quantity].to_i
+      params[:order_item][:quantity].to_i
     elsif params[:commit] == "Remove"
       0
     end

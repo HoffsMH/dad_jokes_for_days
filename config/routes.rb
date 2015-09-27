@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index]
   resources :items, only: [:index, :show]
   resource :cart, only: [:show, :destroy, :create]
-  patch '/items/:id' => 'carts#update'
+  patch '/cart' => 'carts#update'
 
   post '/checkout' => 'orders#create'
   get '/checkout' => 'orders#edit'
