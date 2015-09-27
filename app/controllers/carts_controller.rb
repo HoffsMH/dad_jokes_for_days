@@ -9,11 +9,13 @@ class CartsController < ApplicationController
   end
 
   def show
+    @user_message = current_user.user_name || "Please log in before checking out"
     @cart_items = if session[:cart] && !session[:cart].empty?
       session[:cart].map do |item_dao, quantity|
         CartItem.new(item_dao, quantity)
       end
     end
+    
     @cart_total = grand_total if @cart_items
   end
 

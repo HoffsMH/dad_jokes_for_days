@@ -23,7 +23,25 @@
 <div class="col-md-5">
   <div class='panel panel-default'>
     <div class='panel-body'>
-      <div class="text-right">
+      <div class="text-center">
+        <h3><%= @user_message %></h3>
+        <p class='text left'><h4>Shipping Info:</h4>
+          <table class="table">
+            <tr>
+              <td>Address: </td> <td>12312313 asdfasdfasdfas</td>
+            </tr>
+          <tr>
+              <td>city: </td> <td>asdfas</td>
+          </tr>
+          <tr>
+              <td>state: </td> <td>as</td>
+          </tr>
+          <tr>
+              <td>zipcode: </td> <td>2342</td>
+          </tr>
+          </table>
+        </p>
+        <br>
         <%= button_to "Checkout", checkout_path, id: "checkout", class: "form-control btn btn-primary btn-md" %>
         <br>
       </div>

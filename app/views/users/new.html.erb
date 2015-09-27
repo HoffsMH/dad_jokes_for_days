@@ -10,7 +10,7 @@
 </div>
 <% else %>
 <div class='row'>
-  <div class='col-md-12'>
+  <div class='col-md-6 col-centered'>
     <div class='panel'>
       <div class='panel-body'>
         <h1>Sign Up</h1>
@@ -23,7 +23,7 @@
     <div class='panel'>
       <div class='panel-body'>
         <%= form_for :new_user, url: {action: "create"}, html: {class: "signup"} do |f| %>
-        <%= f.text_field :email, placeholder: "email", class: "form-control input-md" %><br>
+        <%= f.text_field :email, placeholder: "Email", class: "form-control input-md" %><br>
         
         <%= f.text_field :user_name, placeholder: "User Name", class: "form-control input-md" %><br>
         
