@@ -16,7 +16,11 @@ Rails.application.routes.draw do
   resource :cart, only: [:show, :destroy, :create]
   patch '/items/:id' => 'carts#update'
 
+  post '/checkout' => 'orders#create'
+  get '/checkout' => 'orders#edit'
+
   get "/:category" => "categories#show"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
