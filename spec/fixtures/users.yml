@@ -2,15 +2,5 @@
   id: 1
   user_name: "Jeffy"
   email: "jeff@gmail.com"
-  password: "pass"
-2:
-  id: 2
-  user_name: "Ryan"
-  email: "ryan@gmail.com"
-  password: "password"
-
-3:
-  id: 3
-  user_name: "Jeffy"
-  email: "jeff@gmail.com"
-  password: "wordpass"
+  password_digest: "$2a$10$EvURelQrg/L3kW8lGMwjV.0w4gEH2wZTVH3IPSwFlDomwk5RYT7eu"
+  # password: "pass"
