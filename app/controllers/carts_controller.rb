@@ -25,7 +25,7 @@ class CartsController < ApplicationController
       OrderItem.find(params[:order_item][:order_item_id])
       flash[:notice] = "Quantity updated"
     else
-      item = Item.find_by_dao(params[:id])
+      OrderItem.find(params[:order_item][:order_item_id]).delete
       flash[:notice] = "Successfully removed <a href='/items/#{item.dao}'>#{item.name}</a> from your cart."
       session[:cart].delete(params[:id])
     end
