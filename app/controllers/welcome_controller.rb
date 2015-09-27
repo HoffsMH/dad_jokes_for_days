@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    @items = Item.all.sample(3)
+    @item = Item.all.sample
     @jokes = Joke.all.sample(3)
     @joke = Joke.all.sample
   end

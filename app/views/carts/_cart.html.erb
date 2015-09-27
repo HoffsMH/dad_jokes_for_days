@@ -7,11 +7,12 @@
 
       <%= form_for cart_item, method: :patch do |f| %>
       <tr class="cart-row">
-        <td class="tiny"><%= link_to image_tag(cart_item.image_url, class: "img-responsive"), cart_item %><%= link_to cart_item.name, cart_item %></td>
+        <td class="tiny"><%= link_to image_tag(cart_item.image_url, class: "img-responsive"), cart_item %></td>
+          <td><%= link_to cart_item.name, cart_item %></td>
         <td class="text-right">
-          <%= f.text_field :quantity, class: "form-control input-xs" %><br>
-          <%= f.submit "Update Quantity", class: "btn btn-sm btn-success" %><br><br>
-          <%= f.submit "Remove", class: "btn btn-sm btn-danger" %>
+          <%= f.text_field :quantity, class: "form-control input-xs dad-quantity" %>
+          <%= f.submit "Update Quantity", class: "btn btn-xs btn-success" %>
+          <%= f.submit "Remove", class: "btn btn-xs btn-danger" %>
           <% end %>
         </td>
         <td class='price'><span class='price'><%= number_to_currency(cart_item.price) %></span></td>
@@ -31,6 +32,4 @@
   <%= link_to "Delete Cart", cart_path, id: "delete", method: :delete, class: "btn btn-warning" %>
 </div>
 
-<div class="text-right">
-  <%= button_to "Checkout", checkout_path, id: "checkout", class: "btn btn-primary" %>
-</div>
+

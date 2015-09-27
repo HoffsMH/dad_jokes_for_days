@@ -1,0 +1,9 @@
+<div class="col-md-9 text-center col-centered">
+  <div class="dad-item panel panel-default">
+    <div class="panel-body">
+      <%= render partial: "partials/link_summary", locals: {summary: @item} %><br>
+      <span class='price'>$<%= number_with_delimiter(@item.price, :delimiter => ',') %></span> <br>
+      <span class='add_to_cart_button'><%= button_to "Add To Cart", cart_path(item_id: @item), class:'btn btn-primary' %></span>
+    </div>
+  </div>
+</div>

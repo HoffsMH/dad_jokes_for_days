@@ -7,8 +7,8 @@
     </div>
   </div>
 </div>
-
-<div class='col-md-7'>
+<div class="row">
+<div class="col-md-7">
   <div class='panel panel-default'>
     <div class='panel-body'>
       <% if @cart_items %>
@@ -18,4 +18,17 @@
       <% end %>
     </div>
   </div>
+</div>
+
+<div class="col-md-5">
+  <div class='panel panel-default'>
+    <div class='panel-body'>
+      <div class="text-right">
+        <%= button_to "Checkout", checkout_path, id: "checkout", class: "form-control btn btn-primary btn-md" %>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
