@@ -1,6 +1,6 @@
 <table class='table table-striped'>
   <thead>
-    <tr><th></th><th>Item</th><th class="text-right">Quantity</th><th class="text-right">Unit Price</th><th class="text-right">Totals</th></tr>
+    <tr><th></th><th>Item</th><th class="text-center">Quantity</th><th class="text-right">Unit Price</th><th class="text-right">Totals</th></tr>
   </thead>
   <tbody>
     <% @cart_items.each do |cart_item| %>
@@ -9,7 +9,7 @@
       <tr class="cart-row">
         <td class="tiny"><%= link_to image_tag(cart_item.image_url, class: "img-responsive"), cart_item %></td>
           <td><%= link_to cart_item.name, cart_item %></td>
-        <td class="text-right">
+        <td class="">
           <%= f.text_field :quantity, class: "form-control input-xs dad-quantity" %>
           <%= f.submit "Update Quantity", class: "btn btn-xs btn-success" %>
           <%= f.submit "Remove", class: "btn btn-xs btn-danger" %>
