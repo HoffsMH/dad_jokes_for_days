@@ -6,7 +6,7 @@ class CartsController < ApplicationController
     if order_item_in_session
       OrderItem.increment_counter(:quantity, item_in_session.id)
     else
-      order_item = OrderItem.create(===NEED SOMETHING HERE===)
+      order_item = OrderItem.create(item_id: params[:item_id], joke_id: session[:joke_id], quantity: 1)
       session[:cart] << order_item.id
     end
 
