@@ -14,8 +14,8 @@
           <%= f.submit "Remove", class: "btn btn-sm btn-danger" %>
           <% end %>
         </td>
-        <td class='price'><span class='price'>$<%= number_with_delimiter(cart_item.price, :delimiter => ',') %></span></td>
-        <td class='price'><span class='price'>$<%= number_with_delimiter(cart_item.total, :delimiter => ',') %></span></td>
+        <td class='price'><span class='price'><%= number_to_currency(cart_item.price) %></span></td>
+        <td class='price'><span class='price'><%= number_to_currency(cart_item.total) %></span></td>
       </tr>
     <% end %>
   </tbody>
@@ -23,7 +23,7 @@
     <td>Total:</td>
     <td></td>
     <td></td>
-    <td class='price'>$<%= number_with_delimiter(@cart_total, :delimiter => ',') %></td>
+    <td class='price'><%= number_to_currency(@cart_total) %></td>
   </tfoot>
 </table>
 
