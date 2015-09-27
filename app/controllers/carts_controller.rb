@@ -6,26 +6,13 @@ class CartsController < ApplicationController
     if order_item_in_session
       OrderItem.increment_counter(:quantity, item_in_session.id)
     else
-      order_item = OrderItem.create(jasdfkjasdf)
+      order_item = OrderItem.create(===NEED SOMETHING HERE===)
       session[:cart] << order_item.id
     end
-
-    session[:cart][params[:item_id]] ||= 0
-    session[:cart][params[:item_id]] += 1
 
     flash[:notice] = 'Added ' + Item.find_by_dao(params[:item_id]).name
     redirect_to cart_path
   end
-
-  def order_item_in_session
-    order_item_ids = session[:cart].delete("[", "]").split(",")
-    OrderItem.where(id: order_item_ids, joke_id: session[:joke_id], item_id: item.id).first
-  end
-
-
-
-
-
 
   def show
     @cart_items = if session[:cart] && !session[:cart].empty?
@@ -67,6 +54,11 @@ class CartsController < ApplicationController
     elsif params[:commit] == "Remove"
       0
     end
+  end
+
+  def order_item_in_session
+    order_item_ids = session[:cart].delete("[", "]").split(",")
+    OrderItem.where(id: order_item_ids, joke_id: session[:joke_id], item_id: item.id).first
   end
 
 end
