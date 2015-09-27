@@ -30,7 +30,7 @@ feature "cart" do
       click_button("Login")
     }
 
-    xit "can checkout to buy items" do
+    it "can checkout to buy items" do
       click_link("All Products")
       first(:button, "Add To Cart").click
       click_button("Checkout")
@@ -66,5 +66,7 @@ feature "cart" do
       expect(current_path).to eq("/checkout")
     end
   end
-  it "user adds multiple items to cart and tries to buy"
+
+  # xit "user adds multiple items to cart and tries to buy"
+
 end
