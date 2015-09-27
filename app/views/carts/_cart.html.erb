@@ -3,20 +3,22 @@
     <tr><th></th><th>Item</th><th class="text-center">Quantity</th><th class="text-right">Unit Price</th><th class="text-right">Totals</th></tr>
   </thead>
   <tbody>
-    <% @cart_items.each do |cart_item| %>
+    <% @order_items.each do |order_item| %>
 
-      <%= form_for cart_item, method: :patch do |f| %>
+      <%= form_for :order_item, action: cart_path, method: :patch do |f| %>
       <tr class="cart-row">
-        <td class="tiny"><%= link_to image_tag(cart_item.image_url, class: "img-responsive"), cart_item %></td>
-          <td><%= link_to cart_item.name, cart_item %></td>
+        <td class="tiny"><%= link_to image_tag(order_item.item.image_url, class: "img-responsive"), order_item.item %></td>
+          <td><%= link_to order_item.item.name, order_item.item %></td>
         <td class="">
-          <%= f.text_field :quantity, class: "form-control input-xs dad-quantity" %>
+          <%= f.text_field :quantity, value: order_item.quantity, class: "form-control input-xs dad-quantity" %>
+          <%= f.hidden_field :order_item_id, value: order_item.id %>
+
           <%= f.submit "Update Quantity", class: "btn btn-xs btn-success" %>
           <%= f.submit "Remove", class: "btn btn-xs btn-danger" %>
           <% end %>
         </td>
-        <td class='price'><span class='price'><%= number_to_currency(cart_item.price) %></span></td>
-        <td class='price'><span class='price'><%= number_to_currency(cart_item.total) %></span></td>
+        <td class='price'><span class='price'><%= number_to_currency(order_item.item.price) %></span></td>
+        <td class='price'><span class='price'><%= number_to_currency(order_item.total) %></span></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,5 +33,3 @@
 <div class="text-right">
   <%= link_to "Delete Cart", cart_path, id: "delete", method: :delete, class: "btn btn-warning" %>
 </div>
-
-
