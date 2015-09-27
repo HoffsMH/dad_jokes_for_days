@@ -1,4 +1,4 @@
-<%= link_to raw("<div>#{joke.lead}</div> <div class='col-md-push-2'>#{joke.punchline}</div>"), sessions_path(joke_id: joke.id), class: "list-group-item", method: :patch %>
+<%= link_to raw("<div class='dad-joke-lead'>#{joke.lead}</div> <div class='dad-joke-punchline'>#{joke.punchline}</div>"), sessions_path(joke_id: joke.id), class: "list-group-item", method: :patch %>
 
 <%# <a class="list-group-item"> %>
 <%#   <button class.. %>
