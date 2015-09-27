@@ -1,12 +1,14 @@
 class CartsController < ApplicationController
   def create
-    session[:cart] ||= {}
+    session[:cart] ||= []
     #check if added item is already in session
     #if no, add order_item.id to session, otherwise increment
-    if order_item_in_session
+    if !session[:cart].empty? && order_item_in_session
       OrderItem.increment_counter(:quantity, item_in_session.id)
     else
-      order_item = OrderItem.create(item_id: params[:item_id], joke_id: session[:joke_id], quantity: 1)
+      item_id = Item.find_by_dao(params[:item_id]).id
+      order_item = OrderItem.create(item_id: item_id,
+                                    joke_id: session[:joke_id], quantity: 1)
       session[:cart] << order_item.id
     end
 
@@ -15,12 +17,7 @@ class CartsController < ApplicationController
   end
 
   def show
-    @cart_items = if session[:cart] && !session[:cart].empty?
-      session[:cart].map do |item_dao, quantity|
-        CartItem.new(item_dao, quantity)
-      end
-    end
-    @cart_total = grand_total if @cart_items
+    @order_items = OrderItem.where(id: session[:cart])
   end
 
   def update
@@ -57,8 +54,9 @@ class CartsController < ApplicationController
   end
 
   def order_item_in_session
-    order_item_ids = session[:cart].delete("[", "]").split(",")
-    OrderItem.where(id: order_item_ids, joke_id: session[:joke_id], item_id: item.id).first
+    # order_item_ids = session[:cart].delete("[]").split(",")
+    item = Item.find_by_dao(params[:item_id])
+    OrderItem.where(id: session[:cart], joke_id: session[:joke_id], item_id: item.id).first
   end
 
 end

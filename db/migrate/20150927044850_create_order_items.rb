@@ -3,7 +3,7 @@ class CreateOrderItems < ActiveRecord::Migration
     create_table :order_items do |t|
       t.references :item, index: true, foreign_key: true
       t.references :joke, index: true, foreign_key: true
-      t.references :order, index: true, foreign_key: true
+      t.references :order, index: true, foreign_key: true, null: true
       t.integer :quantity
 
       t.timestamps null: false
