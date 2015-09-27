@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
       redirect_to checkout_path
     else
       flash[:notice] = "You must log in before checking out"
-      session[:target_page] = checkout_path
+        session[:target_page] = checkout_path
       redirect_to login_path
     end
   end
