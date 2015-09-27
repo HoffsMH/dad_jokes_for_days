@@ -17,15 +17,17 @@ class CartsController < ApplicationController
   end
 
   def show
+    @cart_total = grand_total
     @order_items = OrderItem.where(id: session[:cart])
   end
 
   def update
     if new_quantity > 0
-      OrderItem.find(params[:order_item][:order_item_id])
+      OrderItem.find(params[:order_item][:order_item_id]).
+                            update(quantity: params[:order_item][:quantity])
       flash[:notice] = "Quantity updated"
     else
-      order_item = OrderItem.find(params[:order_item][:order_item_id]).delete
+      order_item = OrderItem.find(params[:order_item][:order_item_id]).destroy
       session[:cart].delete(order_item.id)
       flash[:notice] = "Successfully removed <a href=\"/items/#{order_item.item.dao}\">#{order_item.item.name}</a> from your cart."
     end
@@ -34,6 +36,7 @@ class CartsController < ApplicationController
   end
 
   def destroy
+    OrderItem.where(id: session[:cart]).destroy_all
     session.delete(:cart)
     flash[:notice] = "Cart deleted!"
     redirect_to cart_path
@@ -42,7 +45,7 @@ class CartsController < ApplicationController
   private
 
   def grand_total
-    @cart_items.reduce(0){|sum, cart_item| sum += cart_item.total}
+    OrderItem.where(id: session[:cart]).reduce(0){|sum, cart_item| sum += cart_item.total}
   end
 
   def new_quantity
