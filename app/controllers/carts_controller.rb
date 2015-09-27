@@ -4,7 +4,7 @@ class CartsController < ApplicationController
     #check if added item is already in session
     #if no, add order_item.id to session, otherwise increment
     if !session[:cart].empty? && order_item_in_session
-      OrderItem.increment_counter(:quantity, item_in_session.id)
+      OrderItem.increment_counter(:quantity, order_item_in_session.id)
     else
       item_id = Item.find_by_dao(params[:item_id]).id
       order_item = OrderItem.create(item_id: item_id,
