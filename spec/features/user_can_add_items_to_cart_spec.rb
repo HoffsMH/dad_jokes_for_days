@@ -3,6 +3,7 @@ require "rails_helper"
 feature "cart" do
   fixtures :categories
   fixtures :items
+  fixtures :users
 
   before(:each) do
     visit "/"
@@ -53,7 +54,7 @@ feature "cart" do
       expect(page).to have_content("You must log in before checking out")
     end
 
-    xit "can log in and proceed to checkout" do
+    it "can log in and proceed to checkout" do
       visit '/'
       click_link("All Products")
       first(:button, "Add To Cart").click
