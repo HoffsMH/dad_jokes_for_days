@@ -36,6 +36,8 @@ class SessionsController < ApplicationController
   def redirect_to_target
     if session[:target_page]
       redirect_to session.delete(:target_page)
+    elsif current_user.admin?
+      redirect_to admin_dashboard_path
     else
       redirect_to dashboard_path
     end
