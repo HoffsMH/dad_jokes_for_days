@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    if !session[:user]
+      redirect_to root_path
+    end
   end
 
   def create
