@@ -1,5 +1,6 @@
-<h5>Invoice #<%= order.id %>, ordered on <%= order.created_at.strftime("%B %d, %Y") %></h5>
-
+<div class='dad-invoice-heading'><h3>Invoice #<%= order.id %>,</h3> ordered on <%= order.created_at.strftime("%B %d, %Y") %></div>
+<div class="row">
+  <div class="col-md-11 col-md-push-1">
 <table class="table table-striped">
   <thead>
     <tr><th></th><th>Item</th><th class="text-center">Quantity</th><th class="text-right">Unit Price</th><th class="text-right">Totals</th></tr>
@@ -15,5 +16,7 @@
     <td class='price'><%= number_to_currency(grand_total(order.order_items)) %></td>
   </tfoot>
 </table>
+</div>
+</div>
 
 <hr>
