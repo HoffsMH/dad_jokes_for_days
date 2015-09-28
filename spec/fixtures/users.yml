@@ -3,4 +3,14 @@
   user_name: "Jeffy"
   email: "jeff@gmail.com"
   password_digest: "$2a$10$EvURelQrg/L3kW8lGMwjV.0w4gEH2wZTVH3IPSwFlDomwk5RYT7eu"
+  admin: false
   # password: "pass"
+
+2:
+  id: 2
+  user_name: "admin"
+  email: "admin@admin.com"
+  password_digest: "$2a$10$CieDYiNmGK0tqdJApYM2N.lZ/.GMRfjqzrUWF759sDwPGw8.CNRNu"
+  admin: true
+  # this is an admin
+  # password: "admin"
