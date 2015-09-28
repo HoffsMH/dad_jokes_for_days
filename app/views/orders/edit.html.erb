@@ -15,10 +15,10 @@
       <div class='panel-body'>
         <div class="row">
           <div class='col-md-6'>
-            <%= button_to "Confirm",  checkout_path, id: "checkout", class: "form-control btn btn-primary btn-md" %>
+            <%= link_to "Back",  cart_path, id: "checkout", class: "form-control btn btn-danger btn-md" %>
           </div>
           <div class='col-md-6'>
-            <%= button_to "Back",  checkout_path, id: "checkout", class: "form-control btn btn-danger btn-md" %>
+            <%= button_to "Confirm",  checkout_path, id: "checkout", class: "form-control btn btn-primary btn-md" %>
           </div>
         </div>
       </div>

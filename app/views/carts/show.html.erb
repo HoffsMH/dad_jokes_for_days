@@ -44,7 +44,7 @@
             </table>
             <% if session[:cart] %>
             <br>
-            <%= button_to "Checkout", checkout_path, id: "checkout", class: "form-control btn btn-primary btn-md" %>
+            <%= link_to "Checkout", checkout_path, id: "checkout", class: "form-control btn btn-primary btn-md" %>
             <br>
             <% else %>
               <p></p>
@@ -56,7 +56,7 @@
             <br>
           <% end %>
           </p>
-        
+
       </div>
     </div>
   </div>
