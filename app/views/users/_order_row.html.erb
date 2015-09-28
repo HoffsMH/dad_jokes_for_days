@@ -1,0 +1,10 @@
+<tr class="cart-row">
+  <td class="tiny"><%= link_to image_tag(order_row.item.image_url, class: "img-responsive"), order_row.item %></td>
+    <td><%= link_to order_row.item.name, order_row.item %></td>
+  <td><%= order_row.quantity %></td>
+  <td class='price'><span class='price'><%= number_to_currency(order_row.item.price) %></span></td>
+  <td class='price'><span class='price'><%= number_to_currency(order_row.total) %></span></td>
+</tr>
+<tr>
+  <td colspan="5" class="dad-item-joke-separator"><%= order_row.joke.lead %></td>
+</tr>

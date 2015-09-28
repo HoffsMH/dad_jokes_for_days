@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :load_categories
 
-  helper_method :category_path, :cart_path, :current_joke, :current_user
+  helper_method :category_path, :cart_path, :current_joke, :current_user, :grand_total
 
   def category_path(category)
     "/" + category.dao
@@ -20,6 +20,10 @@ class ApplicationController < ActionController::Base
 
   def current_user
     User.find(session[:user]) if session[:user]
+  end
+
+  def grand_total(order_items)
+    order_items.reduce(0){|sum, cart_item| sum += cart_item.total}
   end
 
 end
