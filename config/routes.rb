@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   post '/checkout' => 'orders#create'
   get '/checkout' => 'orders#edit'
 
+  namespace :admin do
+    get '/dashboard' => 'users#show'
+  end
+
   get "/:category" => "categories#show"
 
 
