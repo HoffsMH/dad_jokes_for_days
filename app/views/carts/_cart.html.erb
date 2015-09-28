@@ -20,6 +20,9 @@
         <td class='price'><span class='price'><%= number_to_currency(order_item.item.price) %></span></td>
         <td class='price'><span class='price'><%= number_to_currency(order_item.total) %></span></td>
       </tr>
+      <tr>
+        <td colspan="5" class="dad-item-joke-separator"><%= order_item.joke.lead %></td>
+      </tr>
     <% end %>
   </tbody>
    <tfoot class='grand-total-row'>
