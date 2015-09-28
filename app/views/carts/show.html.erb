@@ -11,7 +11,7 @@
 <div class="col-md-7">
   <div class='panel panel-default'>
     <div class='panel-body'>
-      <% if @order_items %>
+      <% if !@order_items.empty? %>
       <%= render 'cart' %>
       <% else %>
       <%= render 'empty_cart' %>
@@ -42,10 +42,15 @@
                 <td>zipcode: </td> <td>2342</td>
             </tr>
             </table>
+            <% if session[:cart] %>
             <br>
             <%= button_to "Checkout", checkout_path, id: "checkout", class: "form-control btn btn-primary btn-md" %>
             <br>
+            <% else %>
+              <p></p>
+            <% end %>
           <% else %>
+            <p>Please login before Checking out</p>
             <br>
             <%= link_to "Login", '/login',  class: "form-control btn btn-primary btn-md" %>
             <br>
