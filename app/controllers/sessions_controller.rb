@@ -22,11 +22,16 @@ class SessionsController < ApplicationController
 
   def destroy
     flash[:notice] = "Successfully logged out. See you next time, #{current_user.user_name}."
-    session[:user] = nil
+    logout
     redirect_to root_path
   end
 
   private
+
+  def logout
+    OrderItem.where(id: session[:cart], order_id: nil).destroy_all
+    session.clear
+  end
 
   def redirect_to_target
     if session[:target_page]

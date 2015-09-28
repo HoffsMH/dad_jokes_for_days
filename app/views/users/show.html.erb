@@ -21,22 +21,15 @@
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-        Past Orders: 
+        Past Orders:
       </div>
       <div class="panel-body">
-        <table class='table'>
-          <tr>
-            <th>stuff</th>
-            <th>some other stuff</th>
-          </tr>
-          
-          <tr>
-            <td>stuff</td>
-            <td>some other stuff</td>
-          </tr>
-        </table>
+        <% if @orders.count > 0 %>
+          <%= render partial: "order", collection: @orders %>
+        <% else %>
+          This account has no order history.
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-

@@ -16,10 +16,9 @@ class CartsController < ApplicationController
   end
 
   def show
-    @cart_total = grand_total
+    @cart_total = grand_total(OrderItem.where(id: session[:cart]))
     @order_items = OrderItem.where(id: session[:cart])
     session[:target_page] = '/cart'
-    
   end
 
   def update
@@ -44,10 +43,6 @@ class CartsController < ApplicationController
   end
 
   private
-
-  def grand_total
-    OrderItem.where(id: session[:cart]).reduce(0){|sum, cart_item| sum += cart_item.total}
-  end
 
   def new_quantity
     if params[:commit] == "Update Quantity"

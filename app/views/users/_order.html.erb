@@ -1,0 +1,19 @@
+<h5>Invoice #<%= order.id %>, ordered on <%= order.created_at.strftime("%B %d, %Y") %></h5>
+
+<table class="table table-striped">
+  <thead>
+    <tr><th></th><th>Item</th><th class="text-center">Quantity</th><th class="text-right">Unit Price</th><th class="text-right">Totals</th></tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'order_row', collection: order.order_items %>
+  </tbody>
+  <tfoot class='grand-total-row'>
+    <td>Total:</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class='price'><%= number_to_currency(grand_total(order.order_items)) %></td>
+  </tfoot>
+</table>
+
+<hr>
