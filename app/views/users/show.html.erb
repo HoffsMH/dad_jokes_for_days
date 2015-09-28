@@ -21,15 +21,41 @@
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-heading">
-        Past Orders:
+        Shipping Address
       </div>
       <div class="panel-body">
-        <% if @orders.count > 0 %>
-          <%= render partial: "order", collection: @orders %>
-        <% else %>
-          This account has no order history.
-        <% end %>
+        <table class="table">
+          <tr>
+            <td>Address: </td> <td>12312313 asdfasdfasdfas</td>
+          </tr>
+        <tr>
+            <td>city: </td> <td>asdfas</td>
+        </tr>
+        <tr>
+            <td>state: </td> <td>as</td>
+        </tr>
+        <tr>
+            <td>zipcode: </td> <td>2342</td>
+        </tr>
+        </table>
       </div>
     </div>
   </div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1>Past Orders</h1>
+    </div>
+    <div class="panel-body">
+      <% if @orders.count > 0 %>
+        <%= render partial: "order", collection: @orders %>
+      <% else %>
+        This account has no order history.
+      <% end %>
+    </div>
+  </div>
+</div>
 </div>
