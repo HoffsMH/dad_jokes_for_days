@@ -1,9 +1,15 @@
 class UsersController < ApplicationController
-  def new
 
+  def new
   end
 
   def show
+    if current_user
+      @orders = current_user.orders
+    else
+      flash[:notice] = "Please login before trying to view your account information."
+      redirect_to root_path
+    end
   end
 
   def create
@@ -24,7 +30,9 @@ class UsersController < ApplicationController
   end
 
   private
+
   def new_user_params
     params.require(:new_user).permit(:email, :user_name, :password, :password_confirmation)
   end
+
 end
