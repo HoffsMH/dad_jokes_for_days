@@ -18,6 +18,7 @@ class CartsController < ApplicationController
   def show
     @cart_total = grand_total(OrderItem.where(id: session[:cart]))
     @order_items = OrderItem.where(id: session[:cart])
+    session[:target_page] = '/cart'
   end
 
   def update

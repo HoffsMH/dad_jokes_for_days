@@ -30,9 +30,17 @@ body {
 .flash-notice {
   color: green;
 }
+
+.panel-body h1 {
+  font-weight: 900;
+}
+.dad-testamonial {
+  font-style: italic;
+}
+
 // HEADER STUFF
 .dad-header {
-  height: 40vh;
+  height: 60vh;
   text-align: center;
 }
 
@@ -94,4 +102,15 @@ body {
 
 .dad-item-joke-separator {
   border-bottom: solid 1px;
+}
+
+// item stuff
+
+.add_to_cart_button {
+  margin: 5px;
+  
+}
+
+.price {
+  font-size: 1.5em;
 }

@@ -1,0 +1,8 @@
+<div class="col-md-4 text-center">
+  <div class="dad-item panel panel-default">
+    <div class="panel-body">
+      <%= render partial: "partials/link_summary", locals: {summary: @item} %><br>
+      <span class='price'><%= number_to_currency(@item.price) %></span> <br>
+    </div>
+  </div>
+</div>
