@@ -17,8 +17,8 @@
           <%= f.submit "Remove", class: "btn btn-xs btn-danger" %>
           <% end %>
         </td>
-        <td class='price'><span class='price'><%= number_to_currency(order_item.item.price) %></span></td>
-        <td class='price'><span class='price'><%= number_to_currency(order_item.total) %></span></td>
+        <td class='cart-price'><span class='cart-price'><%= number_to_currency(order_item.item.price) %></span></td>
+        <td class='cart-price'><span class='cart-price'><%= number_to_currency(order_item.total) %></span></td>
       </tr>
       <tr>
         <td colspan="5" class="dad-item-joke-separator"><%= order_item.joke.lead %></td>
