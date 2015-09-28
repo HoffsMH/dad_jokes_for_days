@@ -33,7 +33,7 @@ feature "cart" do
     it "can checkout to buy items" do
       click_link("All Products")
       first(:button, "Add To Cart").click
-      click_button("Checkout")
+      click_link("Checkout")
 
       expect(current_path).to eq("/checkout")
     end
@@ -46,8 +46,7 @@ feature "cart" do
       click_link("All Products")
       first(:button, "Add To Cart").click
 
-      
-      expect(page).to have_content("You must log in before checking out")
+      expect(page).to have_content("Please login before checking out.")
       expect(page).to have_content("Login")
       expect(page).not_to have_content("Checkout")
     end
