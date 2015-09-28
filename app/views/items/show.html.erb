@@ -1,10 +1,23 @@
-<h1><%= @item.name %></h1>
-<hr>
-
-<div class="col-md-4 text-center">
-  <%= render @item %>
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <h1><%= @item.name %></h1>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="col-md-6 summary">
-  <p>What makes this the most important product for you to order RIGHT NOW?</p>
-  <p><%= @item.description %></p>
+
+
+<div class="row">
+  <%= render "item_show", locals: {item: @item} %>
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h2>Description</h2>
+        <p><%= @item.description %></p>
+        <span class='add_to_cart_button'><%= button_to "Add To Cart", cart_path(item_id: @item), class:'btn btn-primary' %></span>
+      </div>
+    </div>
+  </div>
 </div>
