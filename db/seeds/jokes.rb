@@ -4,7 +4,7 @@ Joke.create(lead: "This bouncy castle costs twice as much this year.", punchline
 Joke.create(lead: "Why can't you hear a pterodactyl use the bathroom?", punchline: "Because his pee is silent!")
 Joke.create(lead: "Want to hear a joke about construction?", punchline: "I'm still working on it!")
 Joke.create(lead: "I warned you not to eat that Play-doh spaghetti.", punchline: "It's an impasta!")
-Joke.create(lead: "Why do people think the shovle was such an important invention?", punchline: "Because it's ground-breaking!")
+Joke.create(lead: "Why do people think the shovel was such an important invention?", punchline: "Because it's ground-breaking!")
 Joke.create(lead: "A man told me he hadn't gone to the bathroom in years.", punchline: "I reckon he's full of crap!")
 Joke.create(lead: "You can't tell too many lightbulb jokes.", punchline: "You'll get burned out!")
 Joke.create(lead: "I don't tell that lasagna joke anymore.", punchline: "It was too cheesy!")
