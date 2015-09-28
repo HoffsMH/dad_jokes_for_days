@@ -1,11 +1,10 @@
 class CartsController < ApplicationController
   def create
     session[:cart] ||= []
-    #check if added item is already in session
-    #if no, add order_item.id to session, otherwise increment
     if !session[:cart].empty? && order_item_in_session
-      OrderItem.increment_counter(:quantity, item_in_session.id)
+      OrderItem.increment_counter(:quantity, order_item_in_session.id)
     else
+      session[:joke_id] ||= Joke.all.sample.id
       item_id = Item.find_by_dao(params[:item_id]).id
       order_item = OrderItem.create(item_id: item_id,
                                     joke_id: session[:joke_id], quantity: 1)
@@ -15,36 +14,39 @@ class CartsController < ApplicationController
     flash[:notice] = 'Added ' + Item.find_by_dao(params[:item_id]).name
     redirect_to cart_path
   end
-  
+
   def show
+    @cart_total = grand_total
     @order_items = OrderItem.where(id: session[:cart])
   end
-  
+
   def update
     if new_quantity > 0
-      OrderItem.find(params[:order_item][:order_item_id])
+      OrderItem.find(params[:order_item][:order_item_id]).
+                            update(quantity: params[:order_item][:quantity])
       flash[:notice] = "Quantity updated"
     else
-      item = Item.find_by_dao(params[:id])
-      flash[:notice] = "Successfully removed <a href='/items/#{item.dao}'>#{item.name}</a> from your cart."
-      session[:cart].delete(params[:id])
+      order_item = OrderItem.find(params[:order_item][:order_item_id]).destroy
+      session[:cart].delete(order_item.id)
+      flash[:notice] = "Successfully removed <a href=\"/items/#{order_item.item.dao}\">#{order_item.item.name}</a> from your cart."
     end
-    
+
     redirect_to cart_path
   end
-  
+
   def destroy
+    OrderItem.where(id: session[:cart]).destroy_all
     session.delete(:cart)
     flash[:notice] = "Cart deleted!"
     redirect_to cart_path
   end
-  
+
   private
-  
+
   def grand_total
-    @cart_items.reduce(0){|sum, cart_item| sum += cart_item.total}
+    OrderItem.where(id: session[:cart]).reduce(0){|sum, cart_item| sum += cart_item.total}
   end
-  
+
   def new_quantity
     if params[:commit] == "Update Quantity"
       params[:order_item][:quantity].to_i
@@ -52,15 +54,10 @@ class CartsController < ApplicationController
       0
     end
   end
-<<<<<<< HEAD
-  
-=======
 
   def order_item_in_session
-    # order_item_ids = session[:cart].delete("[]").split(",")
     item = Item.find_by_dao(params[:item_id])
     OrderItem.where(id: session[:cart], joke_id: session[:joke_id], item_id: item.id).first
   end
 
->>>>>>> master
 end
