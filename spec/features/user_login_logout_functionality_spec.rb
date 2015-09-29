@@ -87,9 +87,14 @@ describe 'a user logs in logs out', type: :feature do
       click_button "Login"
     end
     
-    it "tells the user to log out first" do
+    it "tells the user to log out first after visiting login" do
       visit "/login"
       expect(page).to have_content("Please log out Before switching User")
+    end
+    
+    it "doesnt display login link" do
+      visit "/"
+      expect(page).not_to have_link("Login")
     end
   end
 end
