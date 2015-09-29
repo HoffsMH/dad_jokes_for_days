@@ -1,6 +1,7 @@
 require "rails_helper"
 
 describe 'a user logs in logs out', type: :feature do
+  fixtures :users
 
   describe "the user who has an account logs in" do
     before(:each) do
