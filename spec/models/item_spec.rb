@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Item do
   let(:valid_attributes) {
@@ -61,12 +61,12 @@ describe Item do
   it "won't create an item without a dao" do
     item.dao = nil
     item.valid?
-    expect(item.dao).to eq('mugmug')
+    expect(item.dao).to eq("mugmug")
   end
   it "paramaterizing yields dao" do
     item.dao = nil
     item.valid?
-    expect(item.to_param).to eq('mugmug')
+    expect(item.to_param).to eq("mugmug")
   end
 
   it "successfully adds an item to the database" do

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Category do
   let(:valid_attributes) {
@@ -20,7 +20,7 @@ describe Category do
   it "has a dao" do
     expect(category.dao).to eq("mug")
   end
-  
+
   it "dao is its param" do
     expect(category.to_param).to eq("mug")
   end

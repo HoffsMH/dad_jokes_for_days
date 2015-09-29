@@ -10,7 +10,7 @@ feature "update cart" do
       visit "/"
       click_link("All Products")
       first(:button, "Add To Cart").click
-      
+
     end
     it "can update quantity" do
       fill_in "order_item[quantity]", with: "20"
@@ -27,5 +27,5 @@ feature "update cart" do
       expect(page).to have_link("Item A")
     end
   end
-  
+
 end
