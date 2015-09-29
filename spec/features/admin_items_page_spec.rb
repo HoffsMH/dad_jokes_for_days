@@ -1,6 +1,11 @@
 require "rails_helper"
 
 feature "admin items page" do
+  fixtures :items
+  fixtures :users
+  fixtures :jokes
+  fixtures :categories
+
   context "as an unauthenticated user" do
     before(:each) do
       visit "/admin/items"
@@ -47,6 +52,12 @@ feature "admin items page" do
     end
     it "404s" do
       expect(page.status_code).to eq(200)
+    end
+
+    it "displays a table with all items" do
+      Item.all.each do |item|
+        expect(page).to have_content(item.name)
+      end
     end
   end
 
