@@ -83,8 +83,6 @@ describe Item do
   end
 
   it "will create an item with a default status value of active" do
-    item.status = nil
-    item.valid?
     expect(item.status).to eq("active")
   end
 
