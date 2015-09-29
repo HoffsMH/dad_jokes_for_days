@@ -5,7 +5,7 @@ feature "admin Dashboard" do
     before(:each) do
       visit "/"
     end
-    
+
     it "will not return 404" do
       visit "/admin/dashboard"
       expect(page.status_code).to eq(404)

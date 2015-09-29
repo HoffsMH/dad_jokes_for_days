@@ -7,7 +7,7 @@ feature "Remove Cart" do
       click_link("All Products")
       first(:button, "Add To Cart").click
     end
-    
+
     it "will redirect to cart" do
       click_link "Delete Cart"
       expect(current_path).to eq("/cart")
