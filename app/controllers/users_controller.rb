@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def show
     if current_user
       @orders = current_user.orders
+      @user = current_user
     else
       flash[:notice] = "Please login before trying to view your account information."
       redirect_to root_path
@@ -29,10 +30,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    current_user.update(update_user_params)
+    current_user.save
+    flash[:notice] = "You have successfully updated your information!"
+    redirect_to dashboard_path
+  end
+
   private
 
   def new_user_params
     params.require(:new_user).permit(:email, :user_name, :password, :password_confirmation)
+  end
+
+  def update_user_params
+    params.require(:user).permit(:email, :user_name)
   end
 
 end
