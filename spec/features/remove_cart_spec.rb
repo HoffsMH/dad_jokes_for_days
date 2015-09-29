@@ -11,7 +11,7 @@ feature "Remove Cart" do
       click_link "Delete Cart"
       expect(current_path).to eq("/cart")
     end
-    
+
     it "will remove Cart" do
       click_link "Delete Cart"
       expect(page).not_to have_content("Delete Cart")

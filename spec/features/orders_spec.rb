@@ -1,10 +1,10 @@
 require "rails_helper"
 
 feature "orders" do
-
   before(:each) do
     visit "/"
   end
+
   context "when logged in" do
     before(:each) do
       visit "/"
@@ -13,6 +13,7 @@ feature "orders" do
       fill_in "Password", with: "pass"
       click_button("Login")
     end
+
     it "Redirects to Dashboard" do
       visit "/"
       click_link "All Products"
