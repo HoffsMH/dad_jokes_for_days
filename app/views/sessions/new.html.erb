@@ -15,10 +15,10 @@ Please log out Before switching User
   <div class='col-md-6 col-centered'>
     <div class='panel'>
       <div class='panel-body'>
-        <%= form_for :user, url: {action: "create"}, html: {class: "login"} do |f| %> 
-        <%= f.text_field :email, placeholder: 'Email' , class: "form-control input-lg" %><br>
+        <%= form_for :user, url: {action: "create"}, html: {class: "login"} do |f| %>
+        <%= f.text_field :email, placeholder: 'Email' , class: "form-control input-lg", autofocus: true %><br>
         <%= f.password_field :password, placeholder: 'Password' , class: "form-control input-lg" %><br>
-        
+
         <%= f.submit "Login", class: "btn btn-md btn-primary" %>
         <% end %>
       </div>

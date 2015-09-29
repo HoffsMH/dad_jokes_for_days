@@ -6,7 +6,7 @@
     <tr><th></th><th class='text-center'>Item</th><th class="text-center">Quantity</th><th class="text-center">Unit Price</th><th class="text-center">Totals</th></tr>
   </thead>
   <tbody>
-    <%= render partial: 'order_row', collection: order.order_items %>
+    <%= render partial: '/users/order_row', collection: order.order_items %>
   </tbody>
   <tfoot class='grand-total-row'>
     <td class='price'>Total:</td>
@@ -18,4 +18,3 @@
 </table>
 </div>
 </div>
-
