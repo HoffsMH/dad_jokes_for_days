@@ -77,6 +77,12 @@ feature "cart" do
         first(:button, "Add To Cart").click
         expect(page).to have_selector('.cart-row', count: 1)
       end
+      it "updates the cart Quantity" do
+        visit '/'
+        click_link("All Products")
+        first(:button, "Add To Cart").click
+        expect(page).to have_selector(".dad-quantity[value='2']")
+      end
     end
   end
   
