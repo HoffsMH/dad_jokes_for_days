@@ -101,7 +101,7 @@ describe "a new user signin up", type: :feature do
       fill_in("Password", with: "pass")
       click_button "Login"
     end
-    
+
     it "can not create an account" do
       visit "/register"
       expect(page).to have_content("Please Log out before making a new Account")
