@@ -6,7 +6,7 @@ feature "Item Page" do
       visit "/"
       click_link("All Products")
     end
-    
+
     it "displays a Description" do
       click_link "Item A"
       expect(page).to have_content("Description")
@@ -15,6 +15,6 @@ feature "Item Page" do
       click_link "Item A"
       expect(page).to have_button("Add To Cart")
     end
-    
+
   end
 end

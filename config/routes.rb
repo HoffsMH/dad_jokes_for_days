@@ -1,27 +1,27 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
+  root "welcome#index"
   resource :sessions, only: [:update]
 
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
-  get '/register' => 'users#new'
-  post '/register' => 'users#create'
-  get '/dashboard' => 'users#show'
-  patch '/dashboard' => 'users#update'
-  get '/jokes' => 'jokes#index'
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  delete "/logout" => "sessions#destroy"
+  get "/register" => "users#new"
+  post "/register" => "users#create"
+  get "/dashboard" => "users#show"
+  patch "/dashboard" => "users#update"
+  get "/jokes" => "jokes#index"
 
   resources :categories, only: [:index]
   resources :items, only: [:index, :show]
   resource :cart, only: [:show, :destroy, :create]
-  patch '/cart' => 'carts#update'
+  patch "/cart" => "carts#update"
 
-  post '/checkout' => 'orders#create'
-  get '/checkout' => 'orders#edit'
+  post "/checkout" => "orders#create"
+  get "/checkout" => "orders#edit"
 
   namespace :admin do
-    get '/dashboard' => 'users#show'
+    get "/dashboard" => "users#show"
   end
 
   get "/:category" => "categories#show"
@@ -31,13 +31,13 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # root "welcome#index"
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #   get "products/:id" => "catalog#view"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  #   get "products/:id/purchase" => "catalog#purchase", as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -45,12 +45,12 @@ Rails.application.routes.draw do
   # Example resource route with options:
   #   resources :products do
   #     member do
-  #       get 'short'
-  #       post 'toggle'
+  #       get "short"
+  #       post "toggle"
   #     end
   #
   #     collection do
-  #       get 'sold'
+  #       get "sold"
   #     end
   #   end
 
@@ -64,13 +64,13 @@ Rails.application.routes.draw do
   #   resources :products do
   #     resources :comments
   #     resources :sales do
-  #       get 'recent', on: :collection
+  #       get "recent", on: :collection
   #     end
   #   end
 
   # Example resource route with concerns:
   #   concern :toggleable do
-  #     post 'toggle'
+  #     post "toggle"
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
