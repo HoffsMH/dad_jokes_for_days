@@ -16,8 +16,8 @@ describe 'a new user signin up', type: :feature do
       fill_in('new_user[password_confirmation]', with: 'pass')
       click_button "Create"
       expect(current_path).to eq(dashboard_path)
-      expect(page).to have_content("Username: Jeffy")
-      expect(page).to have_content("Email: Jeff@gmail.com")
+      expect(page).to have_content("Username:")
+      expect(page).to have_content("Email:")
     end
 
     it "can not create an account without a username" do
