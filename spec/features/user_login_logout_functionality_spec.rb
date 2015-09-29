@@ -96,5 +96,13 @@ describe 'a user logs in logs out', type: :feature do
       visit "/"
       expect(page).not_to have_link("Login")
     end
+    it "displays logged in as instead" do
+      visit "/"
+      expect(page).to have_link("Logged in as")
+    end
+    it "displays logout instead of create account" do
+      visit "/"
+      expect(page).to have_link("Logout")
+    end
   end
 end
