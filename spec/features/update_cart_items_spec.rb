@@ -22,6 +22,10 @@ feature "update cart" do
       click_button "Remove"
       expect(page).not_to have_button("Remove")
     end
+    it "upon deleting an item has a link to re add" do
+      click_button "Remove"
+      expect(page).to have_link("Item A")
+    end
   end
   
 end
