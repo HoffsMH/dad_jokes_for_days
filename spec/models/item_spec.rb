@@ -63,6 +63,7 @@ describe Item do
     item.valid?
     expect(item.dao).to eq("mugmug")
   end
+
   it "paramaterizing yields dao" do
     item.dao = nil
     item.valid?
@@ -80,5 +81,12 @@ describe Item do
     item = Item.new(non_unique_attributes)
     expect(item).to be_invalid
   end
+
+  it "will create an item with a default status value of active" do
+    item.status = nil
+    item.valid?
+    expect(item.status).to eq("active")
+  end
+
 
 end
