@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get "/dashboard" => "users#show"
+    resources :items
   end
 
   get "/:category" => "categories#show"
