@@ -12,8 +12,11 @@
   <div class="col-md-6">
     <div class="panel panel-default">
       <div class="panel-body">
-        <h2>Username: <%= current_user.user_name %></h2>
-        <h2>Email: <%= current_user.email %></h2>
+        <%= form_for @user, url: { action: "update" } do |f| %>
+        <h2>Username: <%= f.text_field :user_name %></h2>
+        <h2>Email: <%= f.text_field :email %></h2>
+        <%= f.submit %>
+        <% end %>
       </div>
     </div>
   </div>

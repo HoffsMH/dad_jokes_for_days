@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/register' => 'users#new'
   post '/register' => 'users#create'
   get '/dashboard' => 'users#show'
+  patch '/dashboard' => 'users#update'
   get '/jokes' => 'jokes#index'
 
   resources :categories, only: [:index]
