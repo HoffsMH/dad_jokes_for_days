@@ -20,6 +20,10 @@ describe Category do
   it "has a dao" do
     expect(category.dao).to eq("mug")
   end
+  
+  it "dao is its param" do
+    expect(category.to_param).to eq("mug")
+  end
 
   it "won't create a category without a name" do
     category.name = nil
