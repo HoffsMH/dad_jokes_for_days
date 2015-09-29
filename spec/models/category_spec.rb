@@ -31,10 +31,8 @@ describe Category do
     expect(category).to be_invalid
   end
 
-  xit "won't create a category without a dao" do
-    category.dao = nil
-    # canot actually be tested since it runs the validation
-    expect(category).to be_invalid
+  it "won't create a category without a dao" do
+    expect(category.dao).to eq("mug")
   end
 
   it "successfully adds a category to the database" do
