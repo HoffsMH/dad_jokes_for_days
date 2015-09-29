@@ -77,4 +77,19 @@ describe 'a user logs in logs out', type: :feature do
     end
 
   end
+  
+  context "user is already logged in" do
+    before(:each) do 
+      visit "/"
+      click_link("Login")
+      fill_in("Email", with: 'jeff@gmail.com')
+      fill_in("Password", with: 'pass')
+      click_button "Login"
+    end
+    
+    it "tells the user to log out first" do
+      visit "/login"
+      expect(page).to have_content("Please log out Before switching User")
+    end
+  end
 end
