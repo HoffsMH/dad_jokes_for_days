@@ -11,20 +11,20 @@ feature "cart" do
 
   it "can visit the cart page" do
     click_link("Cart")
-    expect(current_path).to eq('/cart')
+    expect(current_path).to eq("/cart")
   end
 
   it "can add items" do
     click_link("All Products")
     first(:button, "Add To Cart").click
-    expect(current_path).to eq('/cart')
+    expect(current_path).to eq("/cart")
     expect(page).to have_content("Item A")
     expect(page).to have_content("$11.11")
   end
 
   context "user is logged in" do
     before(:each) {
-      visit '/login'
+      visit "/login"
       fill_in "Email", with: "jeff@gmail.com"
       fill_in "Password", with: "pass"
       click_button("Login")
@@ -40,9 +40,8 @@ feature "cart" do
   end
 
   context "user is not logged in" do
-
     it "must log in before checking out" do
-      visit '/'
+      visit "/"
       click_link("All Products")
       first(:button, "Add To Cart").click
 
@@ -52,7 +51,7 @@ feature "cart" do
     end
 
     it "can log in and proceed to checkout" do
-      visit '/'
+      visit "/"
       click_link("All Products")
       first(:button, "Add To Cart").click
       within(:css, ".cart-right") do
@@ -64,8 +63,27 @@ feature "cart" do
       click_button("Login")
       expect(current_path).to eq("/cart")
     end
+
+    context "we already have an item in our cart" do
+      before(:each) do
+        visit "/"
+        click_link("All Products")
+        first(:button, "Add To Cart").click
+      end
+
+      it "lets you add the same item/joke twice" do
+        visit "/"
+        click_link("All Products")
+        first(:button, "Add To Cart").click
+        expect(page).to have_selector(".cart-row", count: 1)
+      end
+
+      it "updates the cart Quantity" do
+        visit "/"
+        click_link("All Products")
+        first(:button, "Add To Cart").click
+        expect(page).to have_selector(".dad-quantity[value='2']")
+      end
+    end
   end
-
-  # xit "user adds multiple items to cart and tries to buy"
-
 end

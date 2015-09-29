@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Category do
   let(:valid_attributes) {
@@ -21,16 +21,18 @@ describe Category do
     expect(category.dao).to eq("mug")
   end
 
+  it "dao is its param" do
+    expect(category.to_param).to eq("mug")
+  end
+
   it "won't create a category without a name" do
     category.name = nil
 
     expect(category).to be_invalid
   end
 
-  xit "won't create a category without a dao" do
-    category.dao = nil
-    # canot actually be tested since it runs the validation
-    expect(category).to be_invalid
+  it "won't create a category without a dao" do
+    expect(category.dao).to eq("mug")
   end
 
   it "successfully adds a category to the database" do

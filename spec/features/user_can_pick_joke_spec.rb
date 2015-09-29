@@ -15,9 +15,10 @@ feature "The home page" do
     expect(current_path).to eq(items_path)
   end
 
-  xit "displays the joke on the page after selection" do
+  it "displays the joke on the page after selection" do
+    Joke.all.stub(:sample).and_return(Joke.all.first)
     click_button "Pick a random joke for me!"
-    expect(page).to have_content("Current chosen Dad Joke: XXXXXX")
+    expect(page).to have_content(" ... ")
   end
 
 end

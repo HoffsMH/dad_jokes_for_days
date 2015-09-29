@@ -14,11 +14,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    if session[:user]
-      flash[:alert] = 'Please log out before creating a new user'
-      redirect_to controller: 'welcome', action: 'index'
-    end
-
     user = User.new(new_user_params)
     if user.save
       session[:user] = user.id
