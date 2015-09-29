@@ -40,7 +40,6 @@ feature "cart" do
   end
 
   context "user is not logged in" do
-
     it "must log in before checking out" do
       visit "/"
       click_link("All Products")
@@ -64,7 +63,8 @@ feature "cart" do
       click_button("Login")
       expect(current_path).to eq("/cart")
     end
-    context "we have already an item in our cart" do
+
+    context "we already have an item in our cart" do
       before(:each) do
         visit "/"
         click_link("All Products")
@@ -77,6 +77,7 @@ feature "cart" do
         first(:button, "Add To Cart").click
         expect(page).to have_selector(".cart-row", count: 1)
       end
+
       it "updates the cart Quantity" do
         visit "/"
         click_link("All Products")
@@ -85,5 +86,4 @@ feature "cart" do
       end
     end
   end
-
 end

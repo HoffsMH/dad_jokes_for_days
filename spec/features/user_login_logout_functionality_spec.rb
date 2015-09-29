@@ -66,7 +66,6 @@ describe "a user logs in logs out", type: :feature do
   end
 
   describe "the user does not have an account" do
-
     it "won't allow user to log in" do
       visit "/login"
       fill_in("Email", with: "J@gmail.com")
@@ -75,7 +74,6 @@ describe "a user logs in logs out", type: :feature do
       expect(current_path).to eq("/login")
       expect(page).to have_content("Invalid Login")
     end
-
   end
 
   context "user is already logged in" do
@@ -96,10 +94,12 @@ describe "a user logs in logs out", type: :feature do
       visit "/"
       expect(page).not_to have_link("Login")
     end
+
     it "displays logged in as instead" do
       visit "/"
       expect(page).to have_link("Logged in as")
     end
+
     it "displays logout instead of create account" do
       visit "/"
       expect(page).to have_link("Logout")
