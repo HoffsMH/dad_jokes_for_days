@@ -58,10 +58,10 @@ describe Item do
     expect(item).to be_invalid
   end
 
-  xit "won't create an item without a dao" do
+  it "won't create an item without a dao" do
     item.dao = nil
-    # cannot actually be tested since it runs the validation
-    expect(item).to be_invalid
+    item.valid?
+    expect(item.dao).to eq('mugmug')
   end
 
   it "successfully adds an item to the database" do
