@@ -15,7 +15,7 @@
         <%= form_for @user, url: { action: "update" } do |f| %>
         <h2>Username: <%= f.text_field :user_name %></h2>
         <h2>Email: <%= f.text_field :email %></h2>
-        <%= f.submit %>
+        <%= f.submit "Update Info" %>
         <% end %>
       </div>
     </div>
