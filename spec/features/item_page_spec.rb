@@ -8,7 +8,12 @@ feature "Item Page" do
     end
     
     it "displays a Description" do
-      expect(page).to have_content("")
+      click_link "Item A"
+      expect(page).to have_content("Description")
+    end
+    it "displays a add to Cart button" do
+      click_link "Item A"
+      expect(page).to have_button("Add To Cart")
     end
     
   end
