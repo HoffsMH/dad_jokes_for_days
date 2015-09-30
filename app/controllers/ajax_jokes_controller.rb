@@ -1,0 +1,2 @@
+class AjaxJokesController < ApplicationController
+end
