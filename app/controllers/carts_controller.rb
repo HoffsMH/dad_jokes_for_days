@@ -4,13 +4,8 @@ class CartsController < ApplicationController
     if !session[:cart].empty? && order_item_in_session
       OrderItem.increment_counter(:quantity, order_item_in_session.id)
     else
-      session[:joke_id] ||= Joke.all.sample.id
-      item_id = Item.find_by_dao(params[:item_id]).id
-      order_item = OrderItem.create(item_id: item_id,
-                                    joke_id: session[:joke_id], quantity: 1)
-      session[:cart] << order_item.id
+      add_orderitem_and_random_joke_to_cart
     end
-
     flash[:notice] = 'Added ' + Item.find_by_dao(params[:item_id]).name
     redirect_to cart_path
   end
@@ -23,15 +18,10 @@ class CartsController < ApplicationController
 
   def update
     if new_quantity > 0
-      OrderItem.find(params[:order_item][:order_item_id]).
-                            update(quantity: params[:order_item][:quantity])
-      flash[:notice] = "Quantity updated"
+      update_orderitem
     else
-      order_item = OrderItem.find(params[:order_item][:order_item_id]).destroy
-      session[:cart].delete(order_item.id)
-      flash[:notice] = "Successfully removed <a href=\"/items/#{order_item.item.dao}\">#{order_item.item.name}</a> from your cart."
+      remove_cart_item
     end
-
     redirect_to cart_path
   end
 
@@ -42,7 +32,16 @@ class CartsController < ApplicationController
     redirect_to cart_path
   end
 
+
   private
+
+  def add_orderitem_and_random_joke_to_cart
+    session[:joke_id] ||= Joke.all.sample.id
+    item_id = Item.find_by_dao(params[:item_id]).id
+    order_item = OrderItem.create(item_id: item_id,
+                                  joke_id: session[:joke_id], quantity: 1)
+    session[:cart] << order_item.id
+  end
 
   def new_quantity
     if params[:commit] == "Update Quantity"
@@ -54,7 +53,20 @@ class CartsController < ApplicationController
 
   def order_item_in_session
     item = Item.find_by_dao(params[:item_id])
-    OrderItem.where(id: session[:cart], joke_id: session[:joke_id], item_id: item.id).first
+    OrderItem.where(id: session[:cart], joke_id: session[:joke_id],
+                    item_id: item.id).first
+  end
+
+  def update_orderitem
+    OrderItem.find(params[:order_item][:order_item_id])
+                  .update(quantity: params[:order_item][:quantity])
+    flash[:notice] = "Quantity updated"
+  end
+
+  def remove_cart_item
+    order_item = OrderItem.find(params[:order_item][:order_item_id]).destroy
+    session[:cart].delete(order_item.id)
+    flash[:notice] = "Successfully removed <a href=\"/items/#{order_item.item.dao}\">#{order_item.item.name}</a> from your cart."
   end
 
 end

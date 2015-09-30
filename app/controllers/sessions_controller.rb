@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   def new
   end
 
@@ -42,5 +41,4 @@ class SessionsController < ApplicationController
       redirect_to dashboard_path
     end
   end
-
 end
