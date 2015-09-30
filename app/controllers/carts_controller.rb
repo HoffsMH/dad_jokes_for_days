@@ -1,33 +1,29 @@
 class CartsController < ApplicationController
+
   def create
-    session[:cart] ||= []
-    if !session[:cart].empty? && order_item_in_session
-      OrderItem.increment_counter(:quantity, order_item_in_session.id)
-    else
-      session[:joke_id] ||= Joke.all.sample.id
-      item_id = Item.find_by_dao(params[:item_id]).id
-      order_item = OrderItem.create(item_id: item_id,
-                                    joke_id: session[:joke_id], quantity: 1)
-      session[:cart] << order_item.id
-    end
-    flash[:notice] = 'Added ' + Item.find_by_dao(params[:item_id]).name
+    item = Item.find_by_dao(params[:item_id])
+
+    session_handler = SessionHandler.new(session)
+    session_handler.add_cart_item(item)
+
+    flash[:notice] = 'Added ' + item.name
     redirect_to cart_path
   end
 
   def show
-    @cart_total = grand_total(OrderItem.where(id: session[:cart]))
     @order_items = OrderItem.where(id: session[:cart])
+    @cart_total = @order_items.sum(:subtotal)
+    @user = current_user
     session[:target_page] = '/cart'
   end
 
   def update
+    order_item = OrderItem.find(params[:order_item][:order_item_id])
     if new_quantity > 0
-      OrderItem.find(params[:order_item][:order_item_id])
-                            .update(quantity: params[:order_item][:quantity])
+      order_item.update(quantity: new_quantity)
       flash[:notice] = "Quantity updated"
     else
-      order_item = OrderItem.find(params[:order_item][:order_item_id]).destroy
-      session[:cart].delete(order_item.id)
+      SessionHandler.new(session).remove_cart_item(order_item)
       flash[:notice] = "Successfully removed <a href=\"/items/#{order_item.item.dao}\">#{order_item.item.name}</a> from your cart."
     end
     redirect_to cart_path
@@ -42,17 +38,11 @@ class CartsController < ApplicationController
 
   private
 
-  def new_quantity
-    if params[:commit] == "Update Quantity"
-      params[:order_item][:quantity].to_i
-    elsif params[:commit] == "Remove"
-      0
+    def new_quantity
+      if params[:commit] == "Update Quantity"
+        params[:order_item][:quantity].to_i
+      elsif params[:commit] == "Remove"
+        0
+      end
     end
-  end
-
-  def order_item_in_session
-    item = Item.find_by_dao(params[:item_id])
-    OrderItem.where(id: session[:cart], joke_id: session[:joke_id],
-                    item_id: item.id).first
-  end
 end

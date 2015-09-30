@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :load_categories
   helper_method :category_path, :cart_path, :current_joke,
-                :current_user, :grand_total, :status_total
+                :current_user, :status_total
 
   def category_path(category)
     "/" + category.dao

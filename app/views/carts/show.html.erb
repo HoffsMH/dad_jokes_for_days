@@ -24,40 +24,16 @@
 <div class="col-md-5">
   <div class='panel panel-default'>
     <div class='panel-body cart-right'>
-      <div class="text-center">
-        <h3><%= @user_message %></h3>
-        <% if current_user %>
-          <p class='text left'><h4>Shipping Info:</h4>
-            <table class="table">
-              <tr>
-                <td>Address: </td> <td>12312313 asdfasdfasdfas</td>
-              </tr>
-            <tr>
-                <td>city: </td> <td>asdfas</td>
-            </tr>
-            <tr>
-                <td>state: </td> <td>as</td>
-            </tr>
-            <tr>
-                <td>zipcode: </td> <td>2342</td>
-            </tr>
-            </table>
-            <% if session[:cart] %>
-            <br>
-            <%= link_to "Checkout", checkout_path, id: "checkout", class: "form-control btn btn-primary btn-md" %>
-            <br>
-            <% else %>
-              <p></p>
-            <% end %>
-          <% else %>
-            <p>Please login before checking out.</p>
-            <br>
-            <%= link_to "Login", '/login',  class: "form-control btn btn-primary btn-md" %>
-            <br>
-          <% end %>
-          </p>
-
-      </div>
+      <% if @user %>
+        <%= render partial: 'users/shipping_info' %>
+        <% if session[:cart] %><br>
+          <%= link_to "Checkout", checkout_path, id: "checkout", class: "form-control btn btn-primary btn-md" %><br>
+        <% end %>
+      <% else %>
+        <p class="text-center">Please login before checking out.</p>
+        <br>
+        <%= link_to "Login", '/login',  class: "form-control btn btn-primary btn-md" %><br>
+      <% end %>
     </div>
   </div>
 </div>
