@@ -78,7 +78,11 @@ feature "admin item creation page" do
         find('#item_category_id').find(:xpath, 'option[2]').select_option
         click_button "Create"
       end
+      it "redirects to admin item index" do
+        expect(current_path).to eq(admin_items_path)
+      end
       it "displays the created item on the next page" do
+        save_and_open_page
         expect(page).to have_link("Admin Item")
         expect(page).to have_content("This is an admin created item")
       end
