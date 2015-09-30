@@ -1,3 +1,4 @@
+<%= render "/users/user_info" %>
 <div class='row'>
   <div class='col-md-12'>
     <div class='panel'>
@@ -11,7 +12,7 @@
 <div class='row text-center'>
   <div class='col-md-3'>
     <div class='panel'>
-      <div class='panel-body'>
+      <div class='panel-body dad-filter dad-ordered-filter'>
         <h2>Ordered</h2>
           <h2><%= status_total("ordered") %></h2>
       </div>
@@ -20,7 +21,7 @@
 
   <div class='col-md-3'>
     <div class='panel'>
-      <div class='panel-body'>
+      <div class='panel-body dad-filter dad-paid-filter'>
         <h2>Paid</h2>
         <h2><%= status_total("paid") %></h2>
       </div>
@@ -29,7 +30,7 @@
 
   <div class='col-md-3'>
     <div class='panel'>
-      <div class='panel-body'>
+      <div class='panel-body dad-filter dad-cancelled-filter'>
         <h2>Cancelled</h2>
         <h2><%= status_total("cancelled") %></h2>
       </div>
@@ -38,7 +39,7 @@
 
   <div class='col-md-3'>
     <div class='panel'>
-      <div class='panel-body'>
+      <div class='panel-body dad-filter dad-completed-filter'>
         <h2>Completed</h2>
         <h2><%= status_total("completed") %></h2>
       </div>
@@ -51,7 +52,7 @@
     <div class='panel'>
       <div class='panel-body'>
         <h2>All Orders</h2><br>
-        <table class="table table-striped table-hover">
+        <table class="table table-hover">
           <thead>
             <tr>
               <th>Order #</th><th>Date</th><th>Customer</th><th>Total Quantity</th><th>Revenue</th><th>Status</th><th>Mark Order As</th>
@@ -66,4 +67,38 @@
     </div>
   </div>
 </div>
-<%= render "/users/user_info" %>
+<script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+<script>
+$(document).ready(function () {
+  $('.dad-filter').click(function () {
+    $('.dad-admin-order-table').addClass("hidden")
+    $('.dad-filter').removeClass("dad-admin-filter-color")
+
+
+  });
+
+  $('.dad-ordered-filter').click(function () {
+      $('.dad-ordered-status').removeClass("hidden")
+      $('.dad-ordered-filter').addClass("dad-admin-filter-color")
+  });
+
+  $('.dad-paid-filter').click(function () {
+      $('.dad-paid-status').removeClass("hidden")
+      $('.dad-paid-filter').addClass("dad-admin-filter-color")
+  });
+
+  $('.dad-cancelled-filter').click(function () {
+      $('.dad-cancelled-status').removeClass("hidden")
+      $('.dad-cancelled-filter').addClass("dad-admin-filter-color")
+  });
+
+  $('.dad-completed-filter').click(function () {
+      $('.dad-completed-status').removeClass("hidden")
+      $('.dad-completed-filter').addClass("dad-admin-filter-color")
+  });
+
+});
+
+
+
+</script>

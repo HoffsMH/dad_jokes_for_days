@@ -1,0 +1,22 @@
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <h1 class='text-left'>Order #<%= @order.id %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <h2><%= @order.user.first %> <%= @order.user.last %></h2>
+        <h2><%= @order.user.street %>, <%= @order.user.city %>, <%= @order.user.state %>, <%= @order.user.zip %></h2>
+        <h2>Status: <%= @order.status %></h2>
+        <%= render partial: "/users/order", locals: {order: @order} %>
+      </div>
+    </div>
+  </div>
+</div>

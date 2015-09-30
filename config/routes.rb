@@ -23,8 +23,9 @@ Rails.application.routes.draw do
   namespace :admin do
     get "/dashboard" => "users#show"
     patch "/dashboard" => "users#update"
+    get "/orders/:order_id" => "orders#show"
     patch "/orders" => "orders#update"
-    resources :items
+    resources :items, only: [:index, :new, :update, :edit, :create]
   end
 
   get "/:category" => "categories#show"

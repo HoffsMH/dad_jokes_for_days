@@ -1,4 +1,5 @@
 class Admin::ItemsController < Admin::AdminController
+  
   def index
     @items = Item.all
   end
@@ -30,7 +31,9 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   private
-  def item_params
-    params.require(:item).permit(:name, :description, :image_url, :category_id, :price, :image_url, :status)
-  end
+
+    def item_params
+      params.require(:item).permit(:name, :description, :image_url, :category_id, :price, :image_url, :status)
+    end
+
 end

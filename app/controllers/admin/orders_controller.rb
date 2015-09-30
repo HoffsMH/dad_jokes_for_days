@@ -8,4 +8,8 @@ class Admin::OrdersController < Admin::AdminController
     redirect_to admin_dashboard_path
   end
 
+  def show
+    @order = Order.find(params[:order_id])
+  end
+
 end
