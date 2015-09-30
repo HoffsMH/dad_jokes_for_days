@@ -3,6 +3,7 @@ class Item < ActiveRecord::Base
 
   validates :name, :description, :image_url, :dao, :price,  presence: true
   validates :name, uniqueness: true
+  validates :price, numericality: true
 
   before_validation :establish_daoism, :establish_image_url
   def establish_daoism

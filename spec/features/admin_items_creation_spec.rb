@@ -100,5 +100,45 @@ feature "admin item creation page" do
         expect(current_path).to eq(new_admin_item_path)
       end
     end
+
+    context "when trying to create an item twice" do
+      before(:each) do
+        2.times do
+          visit "/admin/items/new"
+          fill_in("Name", with: "Admin Item")
+          fill_in("Description", with: "This is an admin created item")
+          fill_in("Price", with: 90.09)
+          find('#item_category_id').find(:xpath, 'option[2]').select_option
+          click_button "Create"
+        end
+      end
+      it "redirects to item form" do
+        expect(current_path).to eq(new_admin_item_path)
+      end
+
+      it "wont' let the user create it" do
+        expect(page).to have_content("has already been taken")
+      end
+    end
+
+    context "when trying to create an item with alpha price" do
+      before(:each) do
+          visit "/admin/items/new"
+          fill_in("Name", with: "Admin Item")
+          fill_in("Description", with: "This is an admin created item")
+          fill_in("Price", with: "asdf")
+          find('#item_category_id').find(:xpath, 'option[2]').select_option
+          click_button "Create"
+      end
+      it "redirects to item form" do
+        expect(current_path).to eq(new_admin_item_path)
+      end
+
+      it "wont' let the user create it" do
+        save_and_open_page
+        expect(page).to have_content("no")
+      end
+
+    end
   end
 end
