@@ -25,4 +25,15 @@ describe Order, type: :model do
     expect(order).to be_invalid
   end
 
+  it "has a quantity method" do
+    order = Order.new(valid_attributes)
+    expect(order).to respond_to(:quantity)
+    expect(order.quantity).to be_a(Fixnum)
+  end
+
+  it "has a total method" do
+    order = Order.new(valid_attributes)
+    expect(order.total).to be_a(Fixnum) 
+  end
+
 end
