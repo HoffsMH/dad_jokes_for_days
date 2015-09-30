@@ -72,6 +72,11 @@ feature "admin item creation page" do
     context "when creating an item" do
       before(:each) do
         visit "/admin/items/new"
+        fill_in("Name", with: "Admin Item")
+        fill_in("Description", with: "This is an admin created item")
+        fill_in("Price", with: 90.09)
+        find('#item_category_id').find(:xpath, 'option[2]').select_option
+        click_button "Create"
         save_and_open_page
       end
       it "" do
