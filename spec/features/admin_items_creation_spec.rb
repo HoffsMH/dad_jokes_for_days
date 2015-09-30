@@ -82,12 +82,23 @@ feature "admin item creation page" do
         expect(current_path).to eq(admin_items_path)
       end
       it "displays the created item on the next page" do
-        save_and_open_page
         expect(page).to have_link("Admin Item")
         expect(page).to have_content("This is an admin created item")
       end
-
-
+    end
+    context "when trying to create an invalid item" do
+      before(:each) do
+        visit "/admin/items/new"
+        fill_in("Name", with: "Admin Item")
+        fill_in("Description", with: "This is an admin created item")
+        fill_in("Price", with: 90.09)
+        find('#item_category_id').find(:xpath, 'option[2]').select_option
+      end
+      it "redirects to new item form" do
+        fill_in("Name", with: "")
+        click_button "Create"
+        expect(current_path).to eq(new_admin_item_path)
+      end
     end
   end
 end
