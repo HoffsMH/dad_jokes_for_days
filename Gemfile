@@ -50,6 +50,7 @@ group :development, :test do
   gem 'pry'
   gem 'capybara'
   gem 'launchy'
+  gem 'rubocop'
 end
 
 group :development do

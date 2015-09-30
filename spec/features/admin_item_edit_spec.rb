@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 feature "admin item edit page" do
   fixtures :items
@@ -84,5 +84,4 @@ feature "admin item edit page" do
       end
     end
   end
-
 end

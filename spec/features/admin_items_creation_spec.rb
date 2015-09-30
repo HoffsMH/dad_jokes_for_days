@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 feature "admin item creation page" do
   fixtures :items
@@ -137,7 +137,6 @@ feature "admin item creation page" do
       it "wont' let the user create it" do
         expect(page).to have_content("no")
       end
-
     end
   end
 end

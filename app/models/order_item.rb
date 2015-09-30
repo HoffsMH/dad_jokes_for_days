@@ -16,5 +16,4 @@ class OrderItem < ActiveRecord::Base
   def fill_subtotal
     self.subtotal = total
   end
-
 end

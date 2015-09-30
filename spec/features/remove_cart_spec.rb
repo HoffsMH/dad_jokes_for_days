@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 feature "Remove Cart" do
   context "Items are in the cart" do

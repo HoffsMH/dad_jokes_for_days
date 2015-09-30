@@ -1,11 +1,11 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let(:user) do
     User.new(email: "joe@example.com", user_name: "joe", password: "pass")
-end
+  end
 
-  it 'is valid' do
+  it "is valid" do
     expect(user).to be_valid
   end
 
@@ -21,7 +21,8 @@ end
 
   it "is invalid with out unique email" do
     user.save
-    user2 = User.create(email: "joe@example.com", user_name: "joe", password: "pass")
+    user2 = User.create(email: "joe@example.com",
+                        user_name: "joe", password: "pass")
     expect(user2).not_to be_valid
   end
 end

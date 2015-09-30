@@ -10,7 +10,6 @@ class CartsController < ApplicationController
                                     joke_id: session[:joke_id], quantity: 1)
       session[:cart] << order_item.id
     end
-
     flash[:notice] = 'Added ' + Item.find_by_dao(params[:item_id]).name
     redirect_to cart_path
   end
@@ -23,15 +22,14 @@ class CartsController < ApplicationController
 
   def update
     if new_quantity > 0
-      OrderItem.find(params[:order_item][:order_item_id]).
-                            update(quantity: params[:order_item][:quantity])
+      OrderItem.find(params[:order_item][:order_item_id])
+                    .update(quantity: params[:order_item][:quantity])
       flash[:notice] = "Quantity updated"
     else
       order_item = OrderItem.find(params[:order_item][:order_item_id]).destroy
       session[:cart].delete(order_item.id)
       flash[:notice] = "Successfully removed <a href=\"/items/#{order_item.item.dao}\">#{order_item.item.name}</a> from your cart."
     end
-
     redirect_to cart_path
   end
 
@@ -54,7 +52,7 @@ class CartsController < ApplicationController
 
   def order_item_in_session
     item = Item.find_by_dao(params[:item_id])
-    OrderItem.where(id: session[:cart], joke_id: session[:joke_id], item_id: item.id).first
+    OrderItem.where(id: session[:cart], joke_id: session[:joke_id],
+                    item_id: item.id).first
   end
-
 end

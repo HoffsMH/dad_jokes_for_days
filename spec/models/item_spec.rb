@@ -2,11 +2,13 @@ require "rails_helper"
 
 describe Item do
   let(:valid_attributes) {
-    { name: "mug mug", description: "100% ceramic", image_url: "wowow", dao: "mugmug", price: 10.23 }
+    { name: "mug mug", description: "100% ceramic",
+      image_url: "wowow", dao: "mugmug", price: 10.23 }
   }
 
   let(:non_unique_attributes) {
-    { name: "zug zug", description: "100% Ceramicc", image_url: "wowowow", dao: "zugzug", price: 10.23 }
+    { name: "zug zug", description: "100% Ceramicc",
+      image_url: "wowowow", dao: "zugzug", price: 10.23 }
   }
 
   before(:each) {
@@ -78,6 +80,5 @@ describe Item do
   it "will create an item with a default status value of active" do
     expect(item.status).to eq("active")
   end
-
 
 end

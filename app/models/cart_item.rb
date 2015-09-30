@@ -1,5 +1,6 @@
 class CartItem < SimpleDelegator
   attr_reader :quantity, :item
+  
   def initialize(item, quantity)
     @quantity = quantity
     @item = Item.find_by_dao(item)
@@ -13,5 +14,4 @@ class CartItem < SimpleDelegator
   def to_param
     @item.id
   end
-
 end

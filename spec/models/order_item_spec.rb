@@ -1,8 +1,8 @@
-require "rails_helper"
+require 'rails_helper'
 
 describe OrderItem, type: :model do
   let(:valid_attributes) {
-    { item_id: 1, joke_id: 7, quantity: 2}
+    { item_id: 1, joke_id: 7, quantity: 2 }
   }
 
   it "is valid" do
