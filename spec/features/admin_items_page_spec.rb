@@ -65,5 +65,11 @@ feature "admin items page" do
         expect(page).to have_content(item.status)
       end
     end
+
+    it "displays status for each item" do
+      Item.all.each do |item|
+        expect(page).to have_content(item.status)
+      end
+    end
   end
 end
