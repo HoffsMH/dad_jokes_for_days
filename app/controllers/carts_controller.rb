@@ -13,20 +13,8 @@ class CartsController < ApplicationController
   def create
     item = Item.find_by_dao(params[:item_id])
 
-    session[:cart] ||= []
     session_handler = SessionHandler.new(session)
     session_handler.add_cart_item(item)
-
-    if !session[:cart].empty? && order_item_in_session
-      OrderItem.increment_counter(:quantity, order_item_in_session.id)
-    else
-      session[:joke_id] ||= Joke.all.sample.id
-      order_item = OrderItem.create(item_id: item.id,
-                                    joke_id: session[:joke_id], quantity: 1)
-      session[:cart] << order_item.id
-    end
-
-    session_handler = SessionHandler.new(session)
 
     flash[:notice] = 'Added ' + item.name
     redirect_to cart_path
