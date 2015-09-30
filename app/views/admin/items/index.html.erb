@@ -1,0 +1,13 @@
+<h1>Admin Items</h1>
+<table class="table">
+<% @items.each do |item|%>
+<tr>
+  <td class="tiny"><img src="<%= item.image_url %>" class="img-responsive tiny"></td>
+  <td>  <%= link_to item.name, item %> </td>
+  <td><%= item.description %></td>
+  <td><%=  item.status %></td>
+  <td><%=  link_to "edit", admin_item_path(item), method: :patch %></td>
+</tr>
+<% end  %>
+
+</table>

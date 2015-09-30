@@ -15,6 +15,7 @@
   category_id: 2
   image_url: /images/itemb.jpg
   price: 222.22
+  status: inactive
 
 3:
   id: 3
