@@ -1,5 +1,5 @@
 <h1>Admin Items</h1>
 
 <%=  @items.each do |item|%>
-  <%  item.name %><%  item.status %>
+<%= item.image_url %> <%= item.description %>  <%  item.name %><%  item.status %>
 <% end  %>
