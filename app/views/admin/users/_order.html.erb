@@ -1,0 +1,6 @@
+<tr>
+  <td><%= order.id %></td>
+  <td><%= order.created_at.strftime("%m/%d/%Y")%></td>
+  <td><%= order.user.first %> <%= order.user.last %></td>
+  <td><%= order.status %></td>
+</tr>
