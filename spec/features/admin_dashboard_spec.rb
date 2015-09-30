@@ -6,7 +6,7 @@ feature "admin Dashboard" do
       visit "/"
     end
 
-    it "will not return 404" do
+    it "will return 404" do
       visit "/admin/dashboard"
       expect(page.status_code).to eq(404)
     end
