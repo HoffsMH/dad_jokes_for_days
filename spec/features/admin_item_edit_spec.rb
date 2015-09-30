@@ -26,7 +26,7 @@ feature "admin item edit page" do
       fill_in("Email", with: "jeff@gmail.com")
       fill_in("Password", with: "pass")
       click_button "Login"
-      visit "/admin/items/#{Item.second.id}/edit"
+      visit "/admin/items/#{Item.second.dao}/edit"
     end
     it "returns not found page" do
       expect(page).to have_content(404)
@@ -44,7 +44,7 @@ feature "admin item edit page" do
       fill_in("Email", with: "admin@admin.com")
       fill_in("Password", with: "admin")
       click_button "Login"
-      visit "/admin/items/#{Item.second.id}/edit"
+      visit "/admin/items/#{Item.second.dao}/edit"
     end
     it "returns admin items page" do
       expect(page).not_to have_content(404)

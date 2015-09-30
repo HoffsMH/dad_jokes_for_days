@@ -48,9 +48,9 @@ feature "admin items page" do
     end
     it "returns admin items page" do
       expect(page).not_to have_content(404)
-      expect(page).to have_content("Admin Items")
+      expect(page).to have_content("Item Administration")
     end
-    it "404s" do
+    it "200s" do
       expect(page.status_code).to eq(200)
     end
 
