@@ -2,7 +2,7 @@ class OrderItem < ActiveRecord::Base
   belongs_to :item
   belongs_to :joke
   belongs_to :order
-  before_validation :fill_subtotal
+  before_save :fill_subtotal
 
   validates :item_id, :joke_id, :quantity,  presence: true
   def total

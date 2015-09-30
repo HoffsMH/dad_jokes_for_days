@@ -1,10 +1,10 @@
-<%= form_for @item, url: admin_item_path, method: :patch  do  |f| %>
-  <%= f.text_field :name, placeholder: "Name" %>
-  <%= f.hidden_field :item_id, value: @item.id %>
-  <%= f.text_field :description, placeholder: "Description" %>
-  <%= f.text_field :price, placeholder: "Price" %>
-  <%= f.text_field :image_url, placeholder: "Image Url" %>
-  <%= f.text_field :status, placeholder: "Status" %>
-  <%= f.collection_select :category_id, @categories, :id, :name %>
-  <%= f.submit "Create"%>
-<% end  %>
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <h1 class='text-left'>Item Administration - Edit <%= @item.name %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render partial: 'form', locals: {html_method: :patch} %>

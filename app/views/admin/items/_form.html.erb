@@ -1,0 +1,16 @@
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <%= form_for @item, url: admin_items_path, method: :html_method  do  |f| %>
+          <%= f.text_field :name, placeholder: "Name" %>
+          <%= f.text_field :description, placeholder: "Description" %>
+          <%= f.text_field :price, placeholder: "Price" %>
+          <%= f.text_field :image_url, placeholder: "Image Url" %>
+          <%= f.collection_select :category_id, @categories, :id, :name %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

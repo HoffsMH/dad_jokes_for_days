@@ -10,11 +10,9 @@ feature "admin item edit page" do
     before(:each) do
       visit "/admin/items/#{Item.second.id}/edit"
     end
-    it "returns not found page" do
-      expect(page).to have_content(404)
+
+    it "page isn't found" do
       expect(page).not_to have_content("Admin Items")
-    end
-    it "404s" do
       expect(page.status_code).to eq(404)
     end
   end
@@ -28,16 +26,14 @@ feature "admin item edit page" do
       click_button "Login"
       visit "/admin/items/#{Item.second.dao}/edit"
     end
-    it "returns not found page" do
-      expect(page).to have_content(404)
+
+    it "page isn't found" do
       expect(page).not_to have_content("Admin Items")
-    end
-    it "404s" do
       expect(page.status_code).to eq(404)
     end
   end
 
-  context "as and authenticated admin" do
+  context "as an authenticated admin" do
     before(:each) do
       visit "/"
       click_link("Login")
@@ -46,9 +42,11 @@ feature "admin item edit page" do
       click_button "Login"
       visit "/admin/items/#{Item.second.dao}/edit"
     end
+
     it "returns admin items page" do
-      expect(page).not_to have_content(404)
+      expect(page).to have_content("Item Administration - Edit #{Item.second.name}")
     end
+
     it "200s" do
       expect(page.status_code).to eq(200)
     end
@@ -72,7 +70,7 @@ feature "admin item edit page" do
     context "user edits an item" do
       before(:each) do
         fill_in "item[name]", with: "edited item"
-        click_link_or_button "Create"
+        click_link_or_button "Update Item"
       end
 
       it "redirects to admin items index" do
