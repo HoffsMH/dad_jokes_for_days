@@ -10,6 +10,7 @@ class Admin::ItemsController < Admin::AdminController
 
   def create
     item = Item.new(item_params)
+    item.save
     redirect_to admin_items_path
   end
 

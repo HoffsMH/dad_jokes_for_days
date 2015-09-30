@@ -16,7 +16,7 @@ class Item < ActiveRecord::Base
   end
 
   def establish_image_url
-    if image_url.empty?
+    if image_url.blank?
       self.image_url = "http://i.imgur.com/yJfmkeK.png"
     end
   end

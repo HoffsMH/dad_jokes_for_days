@@ -45,13 +45,6 @@ describe Item do
     expect(item).to be_invalid
   end
 
-  it "won't create an item without an image_url" do
-    item.image_url = nil
-
-    expect(item).to be_invalid
-  end
-
-
   it "won't create an item without a price" do
     item.price = nil
 
