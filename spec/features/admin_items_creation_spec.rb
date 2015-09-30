@@ -135,7 +135,6 @@ feature "admin item creation page" do
       end
 
       it "wont' let the user create it" do
-        save_and_open_page
         expect(page).to have_content("no")
       end
 

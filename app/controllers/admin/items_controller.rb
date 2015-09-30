@@ -9,10 +9,13 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   def update
+    item = Item.find(params[:item][:item_id])
+    item.update(item_params)
+    redirect_to admin_items_path
   end
 
   def edit
-    @item = Item.new
+    @item = Item.find_by_dao(params[:id])
     @categories = Category.all
   end
 
@@ -28,6 +31,6 @@ class Admin::ItemsController < Admin::AdminController
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :image_url, :category_id, :price, :image_url)
+    params.require(:item).permit(:name, :description, :image_url, :category_id, :price, :image_url, :status)
   end
 end

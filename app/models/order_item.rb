@@ -6,7 +6,11 @@ class OrderItem < ActiveRecord::Base
 
   validates :item_id, :joke_id, :quantity, presence: true
   def total
-    quantity * item.price
+    if item && quantity
+      quantity * item.price
+    else
+      0
+    end
   end
 
   def fill_subtotal

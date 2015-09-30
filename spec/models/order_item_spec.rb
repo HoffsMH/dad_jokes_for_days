@@ -14,7 +14,6 @@ describe OrderItem, type: :model do
   it "is not valid without a item_id" do
     order_item = OrderItem.new(valid_attributes)
     order_item.item_id = nil
-
     expect(order_item).to be_invalid
   end
 
