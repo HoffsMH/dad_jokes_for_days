@@ -68,6 +68,21 @@ feature "admin item edit page" do
     it "displays input for item image_url" do
       expect(page).to have_selector("input[name='item[image_url]']")
     end
+
+    context "user edits an item" do
+      before(:each) do
+        fill_in "item[name]", with: "edited item"
+        click_link_or_button "Create"
+      end
+
+      it "redirects to admin items index" do
+        expect(current_path).to eq(admin_items_path)
+      end
+
+      it "displays the updated item" do
+        expect(page).to have_content('edited item')
+      end
+    end
   end
 
 end

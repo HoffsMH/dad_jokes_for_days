@@ -24,8 +24,4 @@ end
     user2 = User.create(email: "joe@example.com", user_name: "joe", password: "pass")
     expect(user2).not_to be_valid
   end
-
-  xit "is invalid with out a password confirmation" do
-
-  end
 end
