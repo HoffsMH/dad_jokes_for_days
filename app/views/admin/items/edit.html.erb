@@ -4,6 +4,7 @@
   <%= f.text_field :description, placeholder: "Description" %>
   <%= f.text_field :price, placeholder: "Price" %>
   <%= f.text_field :image_url, placeholder: "Image Url" %>
+  <%= f.text_field :status, placeholder: "Status" %>
   <%= f.collection_select :category_id, @categories, :id, :name %>
   <%= f.submit "Create"%>
 <% end  %>
