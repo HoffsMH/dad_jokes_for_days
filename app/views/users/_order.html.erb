@@ -1,20 +1,20 @@
 <div class='dad-invoice-heading'><h3>Invoice #<%= order.id %></h3><%= order.created_at.strftime("%B %d, %Y, %H:%M:%S") %></div>
 <div class="row">
   <div class="col-md-12">
-<table class="table table-striped">
-  <thead>
-    <tr><th></th><th class='text-center'>Item</th><th class="text-center">Quantity</th><th class="text-center">Unit Price</th><th class="text-center">Totals</th></tr>
-  </thead>
-  <tbody>
-    <%= render partial: '/users/order_row', collection: order.order_items %>
-  </tbody>
-  <tfoot class='grand-total-row'>
-    <td class='price'>Total:</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td class='price text-center'><%= number_to_currency(grand_total(order.order_items)) %></td>
-  </tfoot>
-</table>
-</div>
+    <table class="table table-striped">
+      <thead>
+        <tr><th></th><th class='text-center'>Item</th><th class="text-center">Quantity</th><th class="text-center">Unit Price</th><th class="text-center">Totals</th></tr>
+      </thead>
+      <tbody>
+        <%= render partial: '/users/order_row', collection: order.order_items %>
+      </tbody>
+      <tfoot class='grand-total-row'>
+        <td class='price'>Total:</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class='price text-center'><%= number_to_currency(order.total) %></td>
+      </tfoot>
+    </table>
+  </div>
 </div>

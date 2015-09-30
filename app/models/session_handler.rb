@@ -37,4 +37,9 @@ class SessionHandler
     end
   end
 
+  def remove_cart_item(order_item)
+    @session[:cart].delete(order_item.id)
+    order_item.destroy
+  end
+
 end
