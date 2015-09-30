@@ -1,5 +1,29 @@
-<h1>Admin Dashboard</h1>
-
-<!--  admin stuff goes here -->
-
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <h1>Admin Dashboard</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Order #</th><th>Date</th><th>Customer</th><th>Total Quantity</th><th>Revenue</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "order", collection: @all_orders %>
+          </tbody>
+          <tfoot><tr></tr></tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 <%= render "/users/user_info" %>
