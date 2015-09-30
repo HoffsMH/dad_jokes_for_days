@@ -1,3 +1,5 @@
 require_relative 'seeds/categories.rb'
 require_relative 'seeds/items.rb'
 require_relative 'seeds/jokes.rb'
+require_relative 'seeds/users.rb'
+require_relative 'seeds/orders.rb'
