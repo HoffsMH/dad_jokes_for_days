@@ -53,5 +53,31 @@ feature "admin item creation page" do
       expect(page.status_code).to eq(200)
     end
 
+    it "displays input for item name" do
+      expect(page).to have_selector("input[name='item[name]']")
+    end
+
+    it "displays input for item description" do
+      expect(page).to have_selector("input[name='item[description]']")
+    end
+
+    it "displays input for item price" do
+      expect(page).to have_selector("input[name='item[price]']")
+    end
+
+    it "displays input for item image_url" do
+      expect(page).to have_selector("input[name='item[image_url]']")
+    end
+
+    context "when creating an item" do
+      before(:each) do
+        visit "/admin/items/new"
+        save_and_open_page
+      end
+      it "" do
+      end
+
+
+    end
   end
 end

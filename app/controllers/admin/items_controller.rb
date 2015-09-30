@@ -4,5 +4,7 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   def new
+    @item = Item.new
+    @categories = Category.all
   end
 end
