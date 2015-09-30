@@ -77,9 +77,10 @@ feature "admin item creation page" do
         fill_in("Price", with: 90.09)
         find('#item_category_id').find(:xpath, 'option[2]').select_option
         click_button "Create"
-        save_and_open_page
       end
-      it "" do
+      it "displays the created item on the next page" do
+        expect(page).to have_link("Admin Item")
+        expect(page).to have_content("This is an admin created item")
       end
 
 
