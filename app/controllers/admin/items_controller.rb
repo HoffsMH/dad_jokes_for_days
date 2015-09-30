@@ -10,8 +10,12 @@ class Admin::ItemsController < Admin::AdminController
 
   def create
     item = Item.new(item_params)
-    item.save
+    if item.save
     redirect_to admin_items_path
+    else
+      flash[:notice] = item.errors.full_messages
+      redirect_to new_admin_item_path
+    end
   end
 
   private
