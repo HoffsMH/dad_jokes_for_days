@@ -13,7 +13,7 @@
     <div class='panel'>
       <div class='panel-body'>
         <h2>Ordered</h2>
-          <%=  %>
+          <h2><%= status_total("ordered") %></h2>
       </div>
     </div>
   </div>
@@ -22,6 +22,7 @@
     <div class='panel'>
       <div class='panel-body'>
         <h2>Paid</h2>
+        <h2><%= status_total("paid") %></h2>
       </div>
     </div>
   </div>
@@ -30,6 +31,7 @@
     <div class='panel'>
       <div class='panel-body'>
         <h2>Cancelled</h2>
+        <h2><%= status_total("cancelled") %></h2>
       </div>
     </div>
   </div>
@@ -38,6 +40,7 @@
     <div class='panel'>
       <div class='panel-body'>
         <h2>Completed</h2>
+        <h2><%= status_total("completed") %></h2>
       </div>
     </div>
   </div>

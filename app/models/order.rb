@@ -12,24 +12,4 @@ class Order < ActiveRecord::Base
     order_items.sum(:subtotal)
   end
 
-  def ordered
-
-  end
-
-  def paid
-
-  end
-
-  def cancelled
-
-  end
-
-  def completed
-
-  end
-
-  def status(status)
-
-  end
-
 end
