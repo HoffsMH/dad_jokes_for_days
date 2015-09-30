@@ -7,7 +7,7 @@
   <td><%= item.description %></td>
   <td><%= item.price %></td>
   <td><%=  item.status %></td>
-  <td><%=  link_to "edit", admin_item_path(item), method: :patch %></td>
+  <td><%=  link_to "edit", edit_admin_item_path(item) %></td>
 </tr>
 <% end  %>
 
