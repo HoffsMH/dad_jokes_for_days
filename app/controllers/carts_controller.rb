@@ -23,7 +23,7 @@ class CartsController < ApplicationController
   def update
     if new_quantity > 0
       OrderItem.find(params[:order_item][:order_item_id])
-                    .update(quantity: params[:order_item][:quantity])
+                            .update(quantity: params[:order_item][:quantity])
       flash[:notice] = "Quantity updated"
     else
       order_item = OrderItem.find(params[:order_item][:order_item_id]).destroy
