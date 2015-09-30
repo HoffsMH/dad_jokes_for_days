@@ -9,11 +9,13 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   def update
+    item = Item.find(params[:item][:item_id])
+    item.update(item_params)
     redirect_to admin_items_path
   end
 
   def edit
-    @item = Item.new
+    @item = Item.find_by_dao(params[:id])
     @categories = Category.all
   end
 
