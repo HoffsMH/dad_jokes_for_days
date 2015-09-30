@@ -1,14 +1,31 @@
-<h1>Admin Items</h1>
-<table class="table">
-<% @items.each do |item|%>
-<tr>
-  <td class="tiny"><img src="<%= item.image_url %>" class="img-responsive tiny"></td>
-  <td>  <%= link_to item.name, item %> </td>
-  <td><%= item.description %></td>
-  <td><%= item.price %></td>
-  <td><%=  item.status %></td>
-  <td><%=  link_to "edit", edit_admin_item_path(item) %></td>
-</tr>
-<% end  %>
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <h1>Item Administration</h1>
+      </div>
+    </div>
+  </div>
+</div>
 
-</table>
+<div class='row'>
+  <div class='col-md-12'>
+    <div class='panel'>
+      <div class='panel-body'>
+        <table class="table table-hover">
+          <thead><th></th><th>Item</th><th>Description</th><th>Price</th><th>Status</th><th>Action</th></thead>
+          <% @items.each do |item|%>
+          <tr>
+            <td class="tiny"><img src="<%= item.image_url %>" class="img-responsive tiny"></td>
+            <td>  <%= link_to item.name, item %> </td>
+            <td><%= item.description %></td>
+            <td><%= number_to_currency(item.price) %></td>
+            <td><%= item.status %></td>
+            <td><%= link_to "edit", edit_admin_item_path(item), class: "btn btn-warning btn-xs" %></td>
+          </tr>
+          <% end  %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

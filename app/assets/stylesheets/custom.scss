@@ -34,8 +34,24 @@ body {
 .panel-body h1 {
   font-weight: 900;
 }
-.dad-testamonial {
+.dad-testimonial {
   font-style: italic;
+}
+
+.inline {
+  display: inline;
+}
+
+.dad-admin-order-table form {
+  display: inline;
+}
+
+.hidden {
+  display: none;
+}
+
+.dad-admin-filter-color {
+  background-color: #DDDDDD;
 }
 
 // HEADER STUFF

@@ -1,4 +1,4 @@
-<div class='dad-invoice-heading'><h3>Invoice #<%= order.id %></h3> ordered on <%= order.created_at.strftime("%B %d, %Y") %></div>
+<div class='dad-invoice-heading'><h3>Invoice #<%= order.id %></h3><%= order.created_at.strftime("%B %d, %Y, %H:%M:%S") %></div>
 <div class="row">
   <div class="col-md-12">
 <table class="table table-striped">
