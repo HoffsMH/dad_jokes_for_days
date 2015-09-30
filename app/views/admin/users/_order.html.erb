@@ -5,5 +5,5 @@
   <td><%= order.quantity %></td>
   <td><%= number_to_currency(order.total) %></td>
   <td><%= order.status %></td>
-  <td><%= button_to "ordered", admin_orders_path, method: :patch, params: { order_id: order.id }, class: "btn btn-xs btn-warning inline" %> <%= button_to "paid", admin_orders_path, method: :patch, params: { order_id: order.id }, class: "btn btn-xs btn-success inline" %> <%= button_to "cancelled", admin_orders_path, method: :patch, params: { order_id: order.id }, class: "btn btn-xs btn-danger inline" %> <%= button_to "completed", admin_orders_path, method: :patch, params: { order_id: order.id }, class: "btn btn-xs btn-primary inline" %></td>
+  <td><%= button_to "ordered", admin_orders_path, method: :patch, params: { order_id: order.id, new_status: "ordered" }, class: "btn btn-xs btn-warning inline" %> <%= button_to "paid", admin_orders_path, method: :patch, params: { order_id: order.id, new_status: "paid" }, class: "btn btn-xs btn-success inline" %> <%= button_to "cancelled", admin_orders_path, method: :patch, params: { order_id: order.id, new_status: "cancelled" }, class: "btn btn-xs btn-danger inline" %> <%= button_to "completed", admin_orders_path, method: :patch, params: { order_id: order.id, new_status: "completed" }, class: "btn btn-xs btn-primary inline" %></td>
 </tr>
