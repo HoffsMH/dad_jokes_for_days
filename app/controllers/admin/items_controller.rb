@@ -9,6 +9,7 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   def update
+    redirect_to admin_items_path
   end
 
   def edit
