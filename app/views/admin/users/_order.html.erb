@@ -1,8 +1,9 @@
-<tr>
+<tr class='dad-admin-order-table'>
   <td><%= order.id %></td>
   <td><%= order.created_at.strftime("%m/%d/%Y")%></td>
   <td><%= order.user.first %> <%= order.user.last %></td>
   <td><%= order.quantity %></td>
   <td><%= number_to_currency(order.total) %></td>
   <td><%= order.status %></td>
+  <td><%= button_to "ordered", "#", class: "btn btn-xs btn-warning inline" %> <%= button_to "paid", "#", class: "btn btn-xs btn-success inline" %> <%= button_to "cancelled", "#", class: "btn btn-xs btn-danger inline" %> <%= button_to "completed", "#", class: "btn btn-xs btn-primary inline" %></td>
 </tr>
