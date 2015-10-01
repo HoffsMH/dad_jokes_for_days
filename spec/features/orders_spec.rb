@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "orders" do
+feature "orders", js: true do
   before(:each) do
     visit "/"
   end
@@ -19,7 +19,8 @@ feature "orders" do
       click_link "All Products"
       first(:button, "Add To Cart").click
       expect(current_path).to eq("/cart")
-      click_link "Checkout"
+      click_link_or_button "Checkout"
+      save_and_open_page
       click_button "Confirm"
       expect(current_path).to eq("/dashboard")
     end
