@@ -15,7 +15,6 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(new_user_params)
-    byebug
     if user.save
       session[:user] = user.id
       flash[:notice] = 'user successfully created'

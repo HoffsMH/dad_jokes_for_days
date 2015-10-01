@@ -7,10 +7,10 @@ describe "a user logs in logs out", type: :feature do
     before(:each) do
       visit "/"
       click_link("Create Account")
-      fill_in("new_user[email]", with: "J@gmail.com")
-      fill_in("new_user[user_name]", with: "Jeffy")
-      fill_in("new_user[password]", with: "pass")
-      fill_in("new_user[password_confirmation]", with: "pass")
+      fill_in("user[email]", with: "J@gmail.com")
+      fill_in("user[user_name]", with: "Jeffy")
+      fill_in("user[password]", with: "pass")
+      fill_in("user[password_confirmation]", with: "pass")
       click_button "Create"
       click_link("Logout")
     end
@@ -38,10 +38,10 @@ describe "a user logs in logs out", type: :feature do
     before(:each) do
       visit "/"
       click_link("Create Account")
-      fill_in("new_user[email]", with: "J@gmail.com")
-      fill_in("new_user[user_name]", with: "Jeffy")
-      fill_in("new_user[password]", with: "pass")
-      fill_in("new_user[password_confirmation]", with: "pass")
+      fill_in("user[email]", with: "J@gmail.com")
+      fill_in("user[user_name]", with: "Jeffy")
+      fill_in("user[password]", with: "pass")
+      fill_in("user[password_confirmation]", with: "pass")
       click_button "Create"
       click_link("Logout")
     end
