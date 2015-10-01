@@ -27,7 +27,9 @@
       <% if @user %>
         <%= render partial: 'users/shipping_info' %>
         <% if session[:cart] %><br>
-          <%= link_to "Checkout", checkout_path, id: "checkout", class: "form-control btn btn-primary btn-md" %><br>
+          <%= button_to "Checkout", checkout_path,
+                               method: :post, data: { confirm: "Are you sure?" },
+                               class: "form-control btn btn-primary btn-md dad-checkout-btn" %>
         <% end %>
       <% else %>
         <p class="text-center">Please login before checking out.</p>
