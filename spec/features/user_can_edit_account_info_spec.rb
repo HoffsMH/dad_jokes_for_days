@@ -10,7 +10,7 @@ feature "Account info update" do
     click_button("Login")
   end
 
-  it "user can edit account info" do
+  xit "user can edit account info" do
     fill_in("user[user_name]", with: "newname")
     fill_in("user[email]", with: "newemail@new.com")
 

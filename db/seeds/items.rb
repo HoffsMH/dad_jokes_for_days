@@ -11,7 +11,7 @@ category.items.create(name: "Notepad", description: "Keep yourself giggly on a d
 
 category = Category.find_by_name("Décor")
 category.items.create(name: "Motivational Poster", description: "A staple for any dad looking to teach his kids a lesson. Printed on the highest quality artisinal paper.", image_url: "https://s3-us-west-2.amazonaws.com/dadjokesfordays/newimages/item-motivational_poster_600.jpg", price: 42.42)
-category.items.create(name: "Wall decal", description: "Prove the love you have for your child by giving them the gift of laughter every single day. Removable and restickable so it can grow with your child and never ever get thrown away.", image_url: "https://s3-us-west-2.amazonaws.com/dadjokesfordays/newimages/item_room_decal_600.jpg", price: 34.99)
+category.items.create(name: "Wall Decal", description: "Prove the love you have for your child by giving them the gift of laughter every single day. Removable and restickable so it can grow with your child and never ever get thrown away.", image_url: "https://s3-us-west-2.amazonaws.com/dadjokesfordays/newimages/item_room_decal_600.jpg", price: 34.99)
 
 category = Category.find_by_name("Food Prep")
 category.items.create(name: "Apron", description: "Stylish and manly. 100% fun.", image_url: "https://s3-us-west-2.amazonaws.com/dadjokesfordays/newimages/item_apron_600.jpg", price: 31.99)

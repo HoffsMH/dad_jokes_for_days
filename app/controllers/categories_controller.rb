@@ -5,6 +5,6 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find_by_dao(params[:category])
-    @items = @category.items
+    @items = @category.items.order(:name)
   end
 end
