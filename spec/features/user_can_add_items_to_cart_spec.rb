@@ -33,9 +33,9 @@ feature "cart" do
     it "can checkout to buy items" do
       click_link("All Products")
       first(:button, "Add To Cart").click
-      click_link("Checkout")
+      click_link_or_button("Checkout")
 
-      expect(current_path).to eq("/checkout")
+      expect(current_path).to eq("/dashboard")
     end
   end
 

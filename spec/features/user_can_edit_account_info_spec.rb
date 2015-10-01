@@ -11,12 +11,12 @@ feature "Account info update" do
   end
 
   it "user can edit account info" do
-    visit "/dashboard"
     fill_in("user[user_name]", with: "newname")
     fill_in("user[email]", with: "newemail@new.com")
 
-    click_link_or_button("Update Info")
-    expect(page).to have_content("You ")
+    click_button("Update Info")
+
+    expect(page).to have_content("You have successfully updated your information!")
 
     click_link("Logout")
     click_link("Login")
