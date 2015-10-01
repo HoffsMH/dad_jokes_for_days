@@ -1,7 +1,11 @@
 <% @joke = Joke.all.sample %>
 $(".hit-me-response").html("<h2><%= @joke.lead  %><h2><h2><%= @joke.punchline  %><h2>")
 
-// var voices = window.speechSynthesis.getVoices();
-// var msg = new SpeechSynthesisUtterance("<%= raw(@joke.lead) %>................................<%= raw(@joke.punchline) %>");
-// msg.voice = voices[22]
-//     window.speechSynthesis.speak(msg);
+var voices = window.speechSynthesis.getVoices();
+var msg1 = new SpeechSynthesisUtterance("<%= raw(@joke.lead) %>");
+var msg2 = new SpeechSynthesisUtterance("<%= raw(@joke.punchline) %>");
+msg1.voice = voices[10]
+    window.speechSynthesis.speak(msg1);
+
+msg2.voice = voices[10]
+    window.speechSynthesis.speak(msg2);
