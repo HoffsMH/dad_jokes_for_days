@@ -1,1 +1,28 @@
-<%= render "user_info" %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h1>My Account Information</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'update_form' %>
+
+<div class="row">
+<div class="col-md-12">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1>Past Orders</h1>
+    </div>
+    <div class="panel-body">
+      <% if @orders.count > 0 %>
+        <%= render partial: "/users/order", collection: @orders %>
+      <% else %>
+        This account has no order history.
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

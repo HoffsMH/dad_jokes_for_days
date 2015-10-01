@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def new
+    @user = User.new
   end
 
   def show
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(new_user_params)
+    byebug
     if user.save
       session[:user] = user.id
       flash[:notice] = 'user successfully created'
@@ -35,11 +37,11 @@ class UsersController < ApplicationController
   private
 
   def new_user_params
-    params.require(:new_user).permit(:email, :user_name, :password, :password_confirmation)
+    params.require(:user).permit(:email, :user_name, :password, :password_confirmation, :first, :last, :street, :city, :state, :zip)
   end
 
   def update_user_params
-    params.require(:user).permit(:email, :user_name)
+    params.require(:user).permit(:email, :user_name, :first, :last, :street, :city, :state, :zip)
   end
 
 end

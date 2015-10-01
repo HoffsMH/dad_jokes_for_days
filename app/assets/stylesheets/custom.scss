@@ -54,6 +54,23 @@ body {
   background-color: #DDDDDD;
 }
 
+.dad-form-control {
+    display: inline;
+}
+
+
+.dad-form-control-left {
+    width: 35%;
+}
+
+.dad-form-control-right {
+    width: 35%;  
+}
+
+.dad-form-control-small {
+  width: 20%;
+}
+
 // HEADER STUFF
 .dad-header {
   height: 60vh;
