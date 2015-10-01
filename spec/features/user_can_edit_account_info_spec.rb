@@ -16,6 +16,7 @@ feature "Account info update" do
     fill_in("user[email]", with: "newemail@new.com")
 
     click_link_or_button("Update Info")
+    save_and_open_page
     expect(page).to have_content("You ")
 
     click_link("Logout")
