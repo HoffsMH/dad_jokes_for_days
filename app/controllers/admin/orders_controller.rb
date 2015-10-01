@@ -9,7 +9,7 @@ class Admin::OrdersController < Admin::AdminController
   end
 
   def show
-    @order = Order.find(params[:order_id])
+    @order = Order.find.paginate(params[:order_id], :per_page => 30)
   end
 
 end
