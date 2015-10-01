@@ -1,2 +1,0 @@
-class AjaxJokesController < ApplicationController
-end

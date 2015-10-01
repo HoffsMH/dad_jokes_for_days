@@ -1,5 +1,7 @@
 <div class='dad-header'>
 
-  <div class='hi'><h1>Dad Jokes For Days</h1></div>
-  <h3 class='btn btn-primary'>Hit Me!</h3>
+  <div class='hit-me-response'><h1>Dad Jokes For Days</h1></div>
+  <%= form_for :ajax_joke, url: "/ajax-joke", remote: true do |f| %>
+    <%= f.submit "Hit Me!", class: "btn btn-primary" %>
+  <% end %>
 </div>

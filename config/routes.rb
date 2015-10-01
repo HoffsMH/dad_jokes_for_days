@@ -28,6 +28,8 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :new, :update, :edit, :create]
   end
 
+  post "/ajax-joke" => "ajokes#show"
+
   get "/:category" => "categories#show"
 
 
