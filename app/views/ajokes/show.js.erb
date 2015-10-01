@@ -1,0 +1,7 @@
+<% @joke = Joke.all.sample %>
+$(".hit-me-response").html("<h2><%= @joke.lead  %><h2><h2><%= @joke.punchline  %><h2>")
+
+// var voices = window.speechSynthesis.getVoices();
+// var msg = new SpeechSynthesisUtterance("<%= raw(@joke.lead) %>................................<%= raw(@joke.punchline) %>");
+// msg.voice = voices[22]
+//     window.speechSynthesis.speak(msg);

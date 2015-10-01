@@ -56,13 +56,13 @@ body {
 
 // HEADER STUFF
 .dad-header {
-  height: 60vh;
+  height: 70vh;
   text-align: center;
 }
 
-.dad-header h1 {
-  color: #ffffff;
-  font-size: 5.2em;
+.dad-header h2, h1 {
+  color: #337ab7;
+  font-size: 4.2em;
   font-family: 'Slabo 27px', serif;
   font-weight: 1000;
   position: relative;
@@ -80,7 +80,7 @@ body {
 }
 
 .dad-nav-spacer {
-  height: 200px;
+  height: 35vh;
 }
 
 //current joke stuff
