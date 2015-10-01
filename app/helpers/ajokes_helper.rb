@@ -1,0 +1,2 @@
+module AjokesHelper
+end

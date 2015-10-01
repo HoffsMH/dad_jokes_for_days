@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 describe "a user logs in logs out", type: :feature do
   fixtures :users

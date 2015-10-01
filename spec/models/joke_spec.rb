@@ -1,5 +1,4 @@
-require "rails_helper"
-
+require 'rails_helper'
 
 describe Joke do
   let(:valid_attributes) {
@@ -37,6 +36,5 @@ describe Joke do
     category = Joke.new(valid_attributes)
     expect(category).to be_invalid
   end
-
 
 end

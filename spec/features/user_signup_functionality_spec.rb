@@ -1,11 +1,10 @@
-require "rails_helper"
+require 'rails_helper'
 
 describe "a new user signin up", type: :feature do
   fixtures :categories
   fixtures :items
   fixtures :users
   describe "the user does not already exist" do
-
     before(:each) do
       visit "/"
       click_link("Create Account")

@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def new
     @user = User.new
   end
@@ -37,11 +36,12 @@ class UsersController < ApplicationController
   private
 
   def new_user_params
-    params.require(:user).permit(:email, :user_name, :password, :password_confirmation, :first, :last, :street, :city, :state, :zip)
+    params.require(:user).permit(:email, :user_name, :password,
+      :password_confirmation, :first, :last, :street, :city, :state, :zip)
   end
 
   def update_user_params
-    params.require(:user).permit(:email, :user_name, :first, :last, :street, :city, :state, :zip)
+    params.require(:user).permit(:email, :user_name, :first, :last, :street,
+      :city, :state, :zip)
   end
-
 end

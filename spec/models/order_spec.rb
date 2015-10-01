@@ -33,7 +33,7 @@ describe Order, type: :model do
 
   it "has a total method" do
     order = Order.new(valid_attributes)
-    expect(order.total).to be_a(Fixnum) 
+    expect(order.total).to be_a(Fixnum)
   end
 
 end

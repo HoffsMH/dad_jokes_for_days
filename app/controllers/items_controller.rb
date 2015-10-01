@@ -7,5 +7,4 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find_by_dao(params[:id])
   end
-
 end
