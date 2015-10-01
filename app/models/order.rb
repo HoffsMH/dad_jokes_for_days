@@ -4,10 +4,6 @@ class Order < ActiveRecord::Base
 
   validates :user_id, :status, presence: true
 
-  def quantity
-    order_items.sum(:quantity)
-  end
-
   def total
     order_items.sum(:subtotal)
   end
