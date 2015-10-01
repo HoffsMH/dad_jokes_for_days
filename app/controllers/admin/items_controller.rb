@@ -9,7 +9,7 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   def update
-    item = Item.find(params[:item][:item_id])
+    item = Item.find_by_dao(params[:id])
     item.update(item_params)
     redirect_to admin_items_path
   end
@@ -25,6 +25,7 @@ class Admin::ItemsController < Admin::AdminController
       redirect_to admin_items_path
     else
       flash[:notice] = item.errors.full_messages
+
       redirect_to new_admin_item_path
     end
   end
