@@ -1,0 +1,16 @@
+AllCops:
+  Exclude:
+    - 'spec/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/*'
+    - 'config/*'
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'app/helpers/*'
+    - 'app/controllers/*'
+    - 'app/models/*'
+
+Style/Encoding:
+  Enabled: true

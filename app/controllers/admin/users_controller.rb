@@ -1,5 +1,4 @@
 class Admin::UsersController < Admin::AdminController
-
   def show
     @user = current_user
     @orders = current_user.orders
@@ -7,7 +6,5 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def update
-
   end
-
 end

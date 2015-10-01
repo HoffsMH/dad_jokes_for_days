@@ -1,7 +1,6 @@
 class Item < ActiveRecord::Base
   belongs_to :category
-
-  validates :name, :description, :image_url, :dao, :price,  presence: true
+  validates :name, :description, :image_url, :dao, :price, presence: true
   validates :name, uniqueness: true
   validates :price, numericality: true
 

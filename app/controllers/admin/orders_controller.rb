@@ -1,5 +1,4 @@
 class Admin::OrdersController < Admin::AdminController
-
   def update
     order = Order.find(params[:order_id])
     old_status = order.status
@@ -11,5 +10,4 @@ class Admin::OrdersController < Admin::AdminController
   def show
     @order = Order.find(params[:order_id])
   end
-
 end

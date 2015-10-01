@@ -26,7 +26,6 @@ class CartsController < ApplicationController
       SessionHandler.new(session).remove_cart_item(order_item)
       flash[:notice] = "Successfully removed <a href=\"/items/#{order_item.item.dao}\">#{order_item.item.name}</a> from your cart."
     end
-
     redirect_to cart_path
   end
 
@@ -46,5 +45,4 @@ class CartsController < ApplicationController
         0
       end
     end
-
 end
