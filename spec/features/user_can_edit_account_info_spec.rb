@@ -12,7 +12,6 @@ feature "Account info update" do
 
   it "user can edit account info" do
     visit "/dashboard"
-  save_and_open_page
     fill_in("user[user_name]", with: "newname")
     fill_in("user[email]", with: "newemail@new.com")
 
