@@ -9,9 +9,15 @@ class Admin::ItemsController < Admin::AdminController
   end
 
   def update
-    item = Item.find_by_dao(params[:id])
-    item.update(item_params)
-    redirect_to admin_items_path
+    dao = params[:id]
+    item = Item.find_by_dao(dao)
+    if item.update(item_params)
+      flash[:notice] = "Item successfully updated!"
+      redirect_to admin_items_path
+    else
+      flash[:notice] = item.errors.full_messages
+      redirect_to "/admin/items/#{dao}/edit"
+    end
   end
 
   def edit
@@ -25,7 +31,6 @@ class Admin::ItemsController < Admin::AdminController
       redirect_to admin_items_path
     else
       flash[:notice] = item.errors.full_messages
-
       redirect_to new_admin_item_path
     end
   end
