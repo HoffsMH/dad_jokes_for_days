@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-feature "orders", js: true do
+feature "orders" do
   before(:each) do
     visit "/"
   end
 
-  context "when logged in" do
+  context "when logged in", js: true do
     before(:each) do
       visit "/"
       click_link "Login"
@@ -14,24 +14,22 @@ feature "orders", js: true do
       click_button("Login")
     end
 
-    it "Redirects to Dashboard" do
+    it "Redirects to Dashboard", js: false do
+      visit "/"
+      click_link "All Products"
+      first(:button, "Add To Cart").click
+
+      expect(current_path).to eq("/cart")
+      click_link_or_button "Checkout"
+      expect(current_path).to eq("/dashboard")
+    end
+
+    it "Creates the Order", js: false do
       visit "/"
       click_link "All Products"
       first(:button, "Add To Cart").click
       expect(current_path).to eq("/cart")
       click_link_or_button "Checkout"
-      save_and_open_page
-      click_button "Confirm"
-      expect(current_path).to eq("/dashboard")
-    end
-
-    it "Creates the Order" do
-      visit "/"
-      click_link "All Products"
-      first(:button, "Add To Cart").click
-      expect(current_path).to eq("/cart")
-      click_link "Checkout"
-      click_button "Confirm"
       expect(page).to have_content("Invoice #")
     end
   end

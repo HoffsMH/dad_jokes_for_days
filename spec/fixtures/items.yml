@@ -4,7 +4,7 @@
   dao: Itema
   description: Description A
   category_id: 1
-  image_url: /images/itema.jpg
+  image_url: /richard.jpg
   price: 11.11
 
 2:
@@ -13,7 +13,7 @@
   dao: Itemb
   description: Description B
   category_id: 2
-  image_url: /images/itemb.jpg
+  image_url: richard.jpg
   price: 222.22
   status: inactive
 
@@ -23,5 +23,5 @@
   dao: Itemc
   description: Description C
   category_id: 2
-  image_url: /images/itemc.jpg
+  image_url: richard.jpg
   price: 3333.33

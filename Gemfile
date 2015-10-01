@@ -54,6 +54,7 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'rubocop'
+  gem 'selenium-webdriver'
 end
 
 group :development do
