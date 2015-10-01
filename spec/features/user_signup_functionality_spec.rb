@@ -11,57 +11,57 @@ describe "a new user signin up", type: :feature do
     end
 
     it "can create a new account" do
-      fill_in("new_user[email]", with: "Jeff@gmail.com")
-      fill_in("new_user[user_name]", with: "Jeffy")
-      fill_in("new_user[password]", with: "pass")
-      fill_in("new_user[password_confirmation]", with: "pass")
+      fill_in("user[email]", with: "Jeff@gmail.com")
+      fill_in("user[user_name]", with: "Jeffy")
+      fill_in("user[password]", with: "pass")
+      fill_in("user[password_confirmation]", with: "pass")
       click_button "Create"
       expect(current_path).to eq(dashboard_path)
-      expect(page).to have_content("Username:")
-      expect(page).to have_content("Email:")
+      expect(page).to have_selector("input[name='user[user_name]']")
+      expect(page).to have_selector("input[name='user[email]']")
     end
 
     it "can not create an account without a username" do
-      fill_in("new_user[email]", with: "Jeff@gmail.com")
-      fill_in("new_user[password]", with: "pass")
-      fill_in("new_user[password_confirmation]", with: "pass")
+      fill_in("user[email]", with: "Jeff@gmail.com")
+      fill_in("user[password]", with: "pass")
+      fill_in("user[password_confirmation]", with: "pass")
       click_button "Create"
       expect(current_path).to eq("/register")
       expect(page).to have_content("User name can't be blank")
     end
 
     it "can not create an account without an email" do
-      fill_in("new_user[user_name]", with: "Jeffy")
-      fill_in("new_user[password]", with: "pass")
-      fill_in("new_user[password_confirmation]", with: "pass")
+      fill_in("user[user_name]", with: "Jeffy")
+      fill_in("user[password]", with: "pass")
+      fill_in("user[password_confirmation]", with: "pass")
       click_button "Create"
       expect(current_path).to eq("/register")
       expect(page).to have_content("Email can't be blank")
     end
 
     it "can not create an account with an invalid email address" do
-      fill_in("new_user[password]", with: "pass")
-      fill_in("new_user[email]", with: "Jeffgmailcom")
-      fill_in("new_user[user_name]", with: "Jeffy")
-      fill_in("new_user[password_confirmation]", with: "pass")
+      fill_in("user[password]", with: "pass")
+      fill_in("user[email]", with: "Jeffgmailcom")
+      fill_in("user[user_name]", with: "Jeffy")
+      fill_in("user[password_confirmation]", with: "pass")
       click_button "Create"
       expect(current_path).to eq("/register")
       expect(page).to have_content("Email is invalid")
     end
 
     it "can not create an account without a password" do
-      fill_in("new_user[email]", with: "Jeff@gmail.com")
-      fill_in("new_user[user_name]", with: "Jeffy")
-      fill_in("new_user[password_confirmation]", with: "pass")
+      fill_in("user[email]", with: "Jeff@gmail.com")
+      fill_in("user[user_name]", with: "Jeffy")
+      fill_in("user[password_confirmation]", with: "pass")
       click_button "Create"
       expect(current_path).to eq("/register")
       expect(page).to have_content("Password can't be blank")
     end
 
     it "can not create an account without a password confirmation" do
-      fill_in("new_user[email]", with: "Jeff@gmail.com")
-      fill_in("new_user[user_name]", with: "Jeffy")
-      fill_in("new_user[password]", with: "pass")
+      fill_in("user[email]", with: "Jeff@gmail.com")
+      fill_in("user[user_name]", with: "Jeffy")
+      fill_in("user[password]", with: "pass")
       click_button "Create"
       expect(current_path).to eq("/register")
       expect(page).to have_content("Password confirmation doesn't match Password")
@@ -72,10 +72,10 @@ describe "a new user signin up", type: :feature do
     before(:each) do
       visit "/"
       click_link("Create Account")
-      fill_in("new_user[email]", with: "Jeff@gmail.com")
-      fill_in("new_user[user_name]", with: "Jeffy")
-      fill_in("new_user[password]", with: "pass")
-      fill_in("new_user[password_confirmation]", with: "pass")
+      fill_in("user[email]", with: "Jeff@gmail.com")
+      fill_in("user[user_name]", with: "Jeffy")
+      fill_in("user[password]", with: "pass")
+      fill_in("user[password_confirmation]", with: "pass")
       click_button "Create"
     end
 
@@ -83,10 +83,10 @@ describe "a new user signin up", type: :feature do
       click_link("Logout")
       visit "/"
       click_link("Create Account")
-      fill_in("new_user[email]", with: "Jeff@gmail.com")
-      fill_in("new_user[user_name]", with: "J")
-      fill_in("new_user[password]", with: "pa")
-      fill_in("new_user[password_confirmation]", with: "pa")
+      fill_in("user[email]", with: "Jeff@gmail.com")
+      fill_in("user[user_name]", with: "J")
+      fill_in("user[password]", with: "pa")
+      fill_in("user[password_confirmation]", with: "pa")
       click_button "Create"
       expect(page).to have_content("Email has already been taken")
     end

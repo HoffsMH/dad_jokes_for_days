@@ -7,4 +7,8 @@ class Order < ActiveRecord::Base
   def total
     order_items.sum(:subtotal)
   end
+
+  def quantity
+    order_items.sum(:quantity)
+  end
 end
