@@ -37,7 +37,7 @@ feature "admin item creation page" do
     end
   end
 
-  context "as and authenticated admin" do
+  context "as an authenticated admin" do
     before(:each) do
       visit "/"
       click_link("Login")
@@ -46,9 +46,11 @@ feature "admin item creation page" do
       click_button "Login"
       visit "/admin/items/new"
     end
+
     it "returns admin items page" do
       expect(page).not_to have_content(404)
     end
+    
     it "200s" do
       expect(page.status_code).to eq(200)
     end
