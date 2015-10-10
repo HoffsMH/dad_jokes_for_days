@@ -28,6 +28,7 @@ class Admin::ItemsController < Admin::AdminController
   def create
     item = Item.new(item_params)
     if item.save
+      flash[:notice] = "New item '#{item.name}' created."
       redirect_to admin_items_path
     else
       flash[:notice] = item.errors.full_messages
@@ -39,6 +40,6 @@ class Admin::ItemsController < Admin::AdminController
 
   def item_params
     params.require(:item).permit(:name, :description, :image_url,
-                                 :category_id, :price, :image_url, :status)
+                                 :category_id, :price, :status)
   end
 end

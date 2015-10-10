@@ -3,7 +3,7 @@
     <div class='panel'>
       <div class='panel-body'>
 
-        <%= form_for @item, url: admin_item_path(@item), method: html_method do  |f| %>
+        <%= form_for @item, url: path, method: html_method do  |f| %>
           <%= f.text_field :name, placeholder: "Name" %>
           <%= f.text_field :description, placeholder: "Description" %>
           <%= f.text_field :price, placeholder: "Price" %>
