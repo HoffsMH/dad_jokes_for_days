@@ -40,5 +40,5 @@ puts Joke.create(lead: "What do you call someone with no body and no nose?", pun
 puts Joke.create(lead: "How do the trees feel in Spring?", punchline: "Releaved!")
 puts Joke.create(lead: "What's a plumber's favorite type of shoe?", punchline: "Clogs!")
 puts Joke.create(lead: "Did you hear about the fire at the circus?", punchline: "It was in tents!")
-puts Joke.create(lead: "Did you hear about the the big paddle sale?", punchline: "It was quite an oar deal!")
 puts Joke.create(lead: "What's great about living in Switzerland", punchline: "Well, the flag is a big plus!")
+puts Joke.create(lead: "Did you hear about the big paddle sale?", punchline: "It was quite an oar deal!")
